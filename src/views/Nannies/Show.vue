@@ -67,13 +67,18 @@
 
           <div class="col-lg-12" v-if="isNannyLoggedIn()">
               <div class="mb-8">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Edit Profile</button>
+                <router-link v-bind:to="'/nannies/' + nanny.id + '/edit'">
+                  <button  type="button" class="btn btn-primary btn-lg btn-block">Edit Profile</button>
+                </router-link>
               </div>
           </div>
 
           <div class="col-lg-12" v-else>
               <div class="mb-8">
-                <button type="button" class="btn btn-primary btn-lg btn-block">{{ 'Book ' + nanny.first_name }}</button>
+                <router-link v-bind:to="'/bookings/new'">
+                  <button type="button" class="btn btn-primary btn-lg btn-block">{{ 'Book ' + nanny.first_name }}
+                  </button>
+                </router-link>
               </div>
           </div>
 
@@ -121,7 +126,6 @@
           <button type="button" text-center class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             LEAVE A REVIEW
           </button>
-          
         </div>
       </div>
     </div>
@@ -131,6 +135,8 @@
   <button type="button" text-center class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     LEAVE A REVIEW
   </button>
+
+
 
 
   <!-- Modal -->
@@ -145,6 +151,46 @@
           </button>
         </div>
         <div class="modal-body">
+          <p>Modal body text goes here.</p>
+          <div class="bg-light shadow-sm rounded p-3">
+            <h3 class="mb-4 text-danger font-weight-bold">Leave A Comment</h3>
+
+            <form v-on:submit.prevent="submit()">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <div class="form-group form-group-icon">
+                    <i class="fa fa-user"></i>
+                    <input type="text" class="form-control border-warning" placeholder="Nanny First Name" required="">
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <div class="form-group form-group-icon">
+                    <i class="fa fa-user"></i>
+                    <input type="email" class="form-control border-success" placeholder="Nanny Last Name" required="">
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                  <div class="form-group form-group-icon">
+                    <i class="fa fa-chrome"></i>
+                    <input type="text" class="form-control border-purple" placeholder="Stars">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="form-group form-group-icon">
+                    <i class="fa fa-comments "></i>
+                    <textarea class="form-control border-info" placeholder="Write message" rows="6"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-danger text-uppercase">submit</button>
+            </form>
+          </div>
           <p>Modal body text goes here.</p>
         </div>
         <div class="modal-footer">
@@ -334,7 +380,7 @@ export default {
         return true;
       }
       return false;
-    },
+    }
   }
 
 };

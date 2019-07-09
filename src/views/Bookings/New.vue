@@ -81,7 +81,7 @@
                   <div class="form-group mb-4">
                     <label class="" for="text-aria">Start Time</label>
                     <vue-timepicker textarea name="name" class="form-control border-purple" rows="5" cols="95" id="text-aria"></textarea></vue-timepicker>
-                  </div>
+                  </div>Da
 
                   <div class="form-group mb-4">
                     <label class="" for="text-aria">Requirements</label>

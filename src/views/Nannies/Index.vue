@@ -1,17 +1,5 @@
 <template>
   <div class="nannies-index">
-    <!-- <h1>{{ message }}</h1> -->
-
-    <!-- <div v-for="nanny in nannies">
-      <router-link class="item-grid" v-bind:to="'/nannies/' + nanny.id">
-        <h2>First Name: {{ nanny.first_name }}</h2>
-        <h2>Last Name: {{ nanny.last_name }} </h2>
-        <div class="image"><img v-bind:src="nanny.image_url" alt=""></div>
-        <p>Ages: {{ nanny.ages }}</p>
-        <p>Specialization: {{ nanny.specialization }}</p>
-        <p>Bio: {{ nanny.bio }}</p>
-      </router-link>
-    </div> -->
 
     <!-- ====================================
   ——— JUMBOTRON
@@ -113,43 +101,86 @@
         </div>
       </section>
 
-      
-      <div class="row wow fadeInUp">
-        <!-- card -->
-        <div v-for="nanny in nannies" class="col-sm-6 col-lg-4 col-xs-12">
-          <div class="card">
-            <a href="course-single-left-sidebar.html" class="position-relative">
-              <img class="card-img-top" v-bind:src="nanny.image_url" alt="Card image">
-              <div class="card-img-overlay">
-                <span class="badge badge-purple badge-rounded-circle">$50</span>
-              </div>
-            </a>
-            <div class="card-body border-top-5 px-3 border-purple">
-              <h3 class="card-title">
-                <a class="text-purple text-capitalize d-block text-truncate" href="course-single-left-sidebar.html">{{ nanny.first_name }}</a>
-              </h3>
-              <ul class="list-unstyled text-muted">
-                <li class="mb-1">
-                  <i class="fa fa-calendar-o mr-2" aria-hidden="true"></i>Ages: {{ nanny.ages }}
-                </li>
-                <li>
-                  <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>9.00AM-11.00AM
-                </li>
-              </ul>
+      <!-- ====================================
+      ——— NANNIES SECTION
+      ===================================== -->
+      <section class="pt-7 pb-9 pt-md-10">
+        <div class="container">
+          <div class="row">
 
-              <p> {{ nanny.bio }} </p>
-              <div class="d-block">
-                <a href="product-cart.html" class="btn btn-white text-uppercase mb-1 btn-hover-purple">
-                  <i class="fa fa-shopping-basket mr-2" aria-hidden="true"></i>Book Me
+            <div v-for="nanny in nannies" class="col-md-6">
+              <div class="media media-events-list bg-purple">
+                <a class="media-img position-relative" href="event-single-left-sidebar.html">
+                  <img v-bind:src="nanny.image_url" alt="events-image">
                 </a>
-                <a href="course-single-left-sidebar.html" class="btn btn-link text-hover-purple pl-2 pl-lg-0">
-                  <i class="fa fa-angle-double-right mr-1" aria-hidden="true"></i> More
-                </a>
+
+                <div class="media-body">
+                  <h3 class="media-heading mb-4">
+                    <router-link v-bind:to="'/nannies/' + nanny.id" class="text-white text-capitalize d-block text-truncate">{{ nanny.first_name + ' ' + nanny.last_name}}</router-link>
+                  </h3>
+
+                  <ul class="list-unstyled mb-2">
+                    <li class="text-white mb-1 d-flex align-items-baseline">
+                      <i class="fa fa-birthday-cake mr-2 text-white" aria-hidden="true"></i>
+                      {{ nanny.ages }} Years
+                    </li>
+                    <li class="text-white mb-1 d-flex align-items-baseline">
+                      <i class="fa fa-graduation-cap mr-2 text-white" aria-hidden="true"></i>
+                      Education
+                    </li>
+                    <li class="text-white mb-1 d-flex align-items-baseline">
+                      <i class="fa fa-paint-brush mr-2 text-white" aria-hidden="true"></i>
+                      {{ nanny.specialization }}
+                    </li>
+                    <li class="text-white mb-1 d-flex align-items-baseline">
+                      <i class="fa fa-taxi mr-2 text-white" aria-hidden="true"></i>
+                      {{ nanny.rate + '$' + ' / per hour' }}
+                    </li>
+                  </ul>
+
+                  <br>
+                  <div class="mb-1">
+                    <router-link v-bind:to="'/nannies/' + nanny.id" class="btn btn-white btn-sm text-uppercase text-hover-purple">view profile</router-link>
+                  </div>            
+                </div>
               </div>
             </div>
+
           </div>
         </div>
-      </div>
+
+        <!-- <div class="mt-6"> -->
+          <!-- ====================================
+      ——— PAGINATION
+      ===================================== -->
+   <!--    <section class="py-5">
+        <div class="container">
+          <nav aria-label="Page navigation example">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center align-items-center">
+                <li class="page-item"><a class="page-link" href="#">
+                  <i class="fa fa-arrow-left mr-1" aria-hidden="true"></i>
+                  Prev
+                </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">...</a></li>
+                <li class="page-item"><a class="page-link" href="#">15</a></li>
+                <li class="page-item"><a class="page-link" href="#">
+                  Next <i class="fa fa-arrow-right ml-1" aria-hidden="true"></i>
+                </a>
+                </li>
+              </ul>
+            </nav>      
+          </nav>
+        </div>
+      </section> -->
+
+        <!-- </div> -->
+      </section>
+
 
     </div>
 

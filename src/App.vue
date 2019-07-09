@@ -77,13 +77,13 @@
                 <!-- </a> -->
               </li>
 
-              <li class="nav-item dropdown bg-success" v-if="isLoggedIn()">
+              <li class="nav-item dropdown bg-success" v-if="isNannyLoggedIn()">
                 <router-link class="nav-link dropdown-toggle " role="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to="/nannies/logout">
                 <!-- <a class="nav-link dropdown-toggle " href="#" role="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
                   <i class="fa fa-file-text-o nav-icon" aria-hidden="true"></i>
-                  <span>Nanny Logout</span>
+                  <span>Nanny Logout {{ nannyname }}</span>
                 </router-link>
                 <!-- </a> -->
               </li>
@@ -99,7 +99,19 @@
                 <!-- </a> -->
               </li>
 
-              
+              <li class="nav-item dropdown bg-pink" v-if="isParentLoggedIn()">
+                <router-link class="nav-link dropdown-toggle " to="/parents/logout">
+                  <i class="fa fa-home nav-icon" aria-hidden="true"></i>
+                  <span>Parent Logout {{ parentname }}</span>
+                </router-link>
+              </li>
+
+              <li class="nav-item dropdown bg-pink" v-else>
+                <router-link class="nav-link dropdown-toggle " to="/parents/login">
+                  <i class="fa fa-home nav-icon" aria-hidden="true"></i>
+                  <span>Parent Login</span>
+                </router-link>
+              </li>
 
               <li class="nav-item dropdown bg-info">
                 <router-link class="nav-link dropdown-toggle " href="javascript:void(0)" id="stores"
@@ -122,12 +134,7 @@
                 <!-- </a> -->
               </li>
 
-              <li class="nav-item dropdown bg-pink">
-                <router-link class="nav-link dropdown-toggle " href="javascript:void(0)" to="/parents/login">
-                  <i class="fa fa-home nav-icon" aria-hidden="true"></i>
-                  <span>Parent Login</span>
-                </router-link>
-              </li>
+              
             </ul>
           </div>
 
@@ -352,14 +359,31 @@
 
 <script>
   export default {
-  
-  methods: {
-    isLoggedIn: function() {
-      if (localStorage.getItem("jwt")) {
-        return true;
-      }
-      return false;
+    data: function() {
+      return {
+        parentname: localStorage.getItem("parentname"),
+        nannyname: localStorage.getItem("nannyname")
+      };
     },
+    methods: {
+      isNannyLoggedIn: function() {
+        if (localStorage.getItem("is_nanny")) {
+          return true;
+       }
+        return false;
+    },
+      isParentLoggedIn: function() {
+        if (localStorage.getItem("is_parent")) {
+          return true;
+       }
+        return false;
+    }
+    // isLoggedIn: function() {
+    //   if (localStorage.getItem("jwt")) {
+    //     return true;
+    //   }
+    //   return false;
+    // },
   }
 };
 </script>
