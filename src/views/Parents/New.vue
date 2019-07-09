@@ -111,6 +111,17 @@
   </div>
 </section> --> -->
 
+  <div class="container">
+    <!-- <div class="row">
+      <div class="col-sm-6 offset-lg-2 col-lg-4"> -->
+        <!-- <div class="mb-4 mb-sm-0"> -->
+          <div class="bg-warning rounded-top p-2">
+            <h3 class="text-white font-weight-bold mb-0 ml-2">Create An Account</h3>
+          </div>
+
+          <div class="border rounded-bottom-sm border-top-0">
+            <div class="p-3">
+
 
 <form v-on:submit.prevent="submit()">
   <div class="form-row">
@@ -144,6 +155,13 @@
 
   <button type="submit" class="btn btn-success">Create</button>
 </form>
+
+</div>
+          </div>
+        <!-- </div> -->
+     <!--  </div>
+    </div> -->
+  </div>
 
 
 
