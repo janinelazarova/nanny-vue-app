@@ -9,7 +9,7 @@
       <div class="container">
         <div class="breadcrumb-holder">
           <div>
-            <h1 class="breadcrumb-title">Kid Experts. Not Just Nannies. </h1>
+            <h1 class="breadcrumb-title">Meet Our Kid Experts.</h1>
             <ul class="breadcrumb breadcrumb-transparent">
               <li class="breadcrumb-item">
                 <a class="text-white" href="index.html">Our unique community of teachers and artists blend their skills and talents with babysitting</a>
@@ -31,19 +31,19 @@
       <section class="pt-10 pb-7 pb-md-9">
         <div class="container">
           <div class="section-title justify-content-center mb-4 mb-md-8">
-            <span class="shape shape-left bg-info"></span>
-            <h2 class="text-danger">Why Our App is Special</h2>
-            <span class="shape shape-right bg-info"></span>
+            <span class="shape shape-left bg-purple"></span>
+            <h2 class="text-pink">Why Our App is Special</h2>
+            <span class="shape shape-right bg-purple"></span>
           </div>
 
           <div class="row">
             <div class="col-md-6 col-lg-5 offset-lg-1 col-xl-4 offset-xl-2">
               <div class="media text-right mb-6">
-                <div class="media-icon-large bg-warning rounded shadow-sm ml-auto mr-0 order-1">
+                <div class="media-icon-large bg-pink rounded shadow-sm ml-auto mr-0 order-1">
                   <i class="fa fa-graduation-cap border-0" aria-hidden="true"></i>
                 </div>
                 <div class="media-body mr-5">
-                  <h3 class="text-warning text-truncate">Experienced Teachers</h3>
+                  <h3 class="text-pink text-truncate">Experienced Teachers</h3>
                   <p class="">Every carer on our platform is experienced at working with children, pre-screened and has a current Working License.</p>
                 </div>
               </div>
@@ -51,11 +51,11 @@
 
             <div class="col-md-6 col-lg-5 col-xl-4">
               <div class="media mb-6">
-                <div class="media-icon-large bg-success rounded shadow-sm mr-5">
+                <div class="media-icon-large bg-purple rounded shadow-sm mr-5">
                   <i class="fa fa-leaf border-0" aria-hidden="true"></i>
                 </div>
                 <div class="media-body">
-                  <h3 class="text-success text-truncate">Talented Professionals</h3>
+                  <h3 class="text-purple text-truncate">Talented Professionals</h3>
                   <p class="">Kid Experts are at the heart of our community. They are the talented and skilled professionals who create the unique experiences that inspire.</p>
                 </div>
               </div>
@@ -94,9 +94,9 @@
       <section class="pt-9 pb-6">
         <div class="container">
           <div class="section-title justify-content-center mb-4 mb-md-8">
-            <span class="shape shape-left bg-info"></span>
-            <h2 class="text-danger">Find a Kid Expert</h2>
-            <span class="shape shape-right bg-info"></span>
+            <span class="shape shape-left bg-purple"></span>
+            <h2 class="text-pink">Find a Kid Expert</h2>
+            <span class="shape shape-right bg-purple"></span>
           </div>
         </div>
       </section>

@@ -31,12 +31,11 @@
                     </div>
 
                     <div class="form-group">
-                      <button type="submit" class="btn btn-danger text-uppercase w-100">Log In</button>
+                      <!-- <router-link v-bind:to="'/nannies/' + nanny.id"> -->
+                        <button type="submit" class="btn btn-danger text-uppercase w-100">Log In</button>
+                      <!-- </router-link> -->
                     </div>
 
-                    <div class="form-group text-center text-secondary mb-0">
-                      <a class="text-danger" href="#">Forgot password?</a>
-                    </div>
                   </form>
                 </div>
               </div>

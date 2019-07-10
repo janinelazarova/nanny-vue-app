@@ -11,7 +11,7 @@
 
           <div class="col-sm-12 col-lg-12">
             <div class="mb-4 mb-sm-0">
-              <div class="bg-warning rounded-top p-2">
+              <div class="bg-purple rounded-top p-2">
                 <h3 class="text-white font-weight-bold mb-0 ml-2">Parent Login</h3>
               </div>
       
@@ -31,12 +31,9 @@
                     </div>
 
                     <div class="form-group">
-                      <button type="submit" class="btn btn-danger text-uppercase w-100">Log In</button>
+                      <button type="submit" class="btn btn-pink text-uppercase text-white w-100">Log In</button>
                     </div>
 
-                    <div class="form-group text-center text-secondary mb-0">
-                      <a class="text-danger" href="#">Forgot password?</a>
-                    </div>
                   </form>
                 </div>
               </div>
