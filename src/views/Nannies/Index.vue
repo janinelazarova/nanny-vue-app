@@ -89,26 +89,149 @@
       </section>
 
       <!-- ====================================
-      ——— SERVICE STYLE 1
+      ——— COURSES SECTION
       ===================================== -->
-      <section class="pt-9 pb-6">
+      <section class="py-8 py-md-10">
+
         <div class="container">
           <div class="section-title justify-content-center mb-4 mb-md-8">
             <span class="shape shape-left bg-purple"></span>
             <h2 class="text-pink">Find a Kid Expert</h2>
             <span class="shape shape-right bg-purple"></span>
           </div>
-        </div>
-      </section>
+        </div> 
 
-      <!-- ====================================
-      ——— NANNIES SECTION
-      ===================================== -->
-      <section class="pt-7 pb-9 pt-md-10">
         <div class="container">
           <div class="row">
+            <div class="col-lg-12 col-sm-12 mb-4 mb-md-0 order-2 order-lg-0">
+              <div class="row">
 
-            <div v-for="nanny in nannies" class="col-md-6">
+                <!-- <div class="col-md-12 col-lg-4">
+                  <button class="btn btn-pink text-white text-uppercase">Sort By Rate</button>
+                </div> -->
+
+
+                <div class="col-md-12 col-lg-8">
+                  <form class="shadow-sm rounded mb-8">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text bg-light border-0 px-4">
+                          <i class="fa fa-search text-muted font-size-18" aria-hidden="true"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control bg-light border-0 form-control-lg" aria-label="Amount (to the nearest dollar)"
+                       placeholder="Search nanny by specialization..." v-model="specializationFilter" list="specializations" required="">
+                      <div class="input-group-append">
+                        <button type="submit" class="btn shadow-none btn-lg btn-pink text-white text-uppercase">Search</button>
+                      </div>
+                    </div>
+                  </form>
+
+                  <!-- <form class="" action="search-result.html">
+                    <div class="card shadow-none bg-transparent">
+                      <h3 class="card-header bg-warning font-weight-bold rounded-top text-white">Search</h3>
+                      <div class="card-body border border-top-0 rounded-bottom">
+                        <div class="input-group border-bottom pb-3 pt-4">
+                          <input type="text" class="form-control border-0 px-1" placeholder="Enter Your Search" aria-describedby="basic-addon2">
+                          <span class="input-group-addon" id="basic-addon2">
+                            <input class="btn btn-sm btn-warning text-uppercase text-white shadow-sm" type="submit" value="Search">
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </form> -->
+
+                 <!--  <div class="card shadow-none bg-transparent overflow-hidden">
+                    <h3 class="card-header bg-success font-weight-bold rounded-top text-white">Filter By</h3>
+                    <div class="card-body border border-top-0 rounded-bottom">
+                      <div class="filter">
+                        <div class="mb-4 pt-3">
+                          <select class="select2-select w-100 bg-white" name="state">
+                            <option value="0">All Classes</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="mb-4">
+                          <select class="select2-select w-100" name="state">
+                            <option value="0">Ages</option>
+                            <option value="1">05</option>
+                            <option value="2">06</option>
+                            <option value="3">07</option>
+                            <option value="3">08</option>
+                            <option value="3">09</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="price-range mt-6" id="price-range">
+                        <div class="mb-6" id="slider-non-linear-step"></div>
+                        <div class="price-range-content">
+                          <input class="btn btn-sm btn-success text-white text-uppercase" type="submit" value="Filter">
+                          <span class="price-text">Price:</span>
+                          <span class="price-value" id=20></span>
+                          <span class="price-value" id=30></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-pink text-white text-uppercase" v-on:click="setSortAttribute('rate')">Sort By Rate</button>
+                  <button class="btn btn-pink text-white text-uppercase" v-on:click="setSortAttribute('first_name')">Sort By Name</button>
+                </div>
+      
+              </div>
+            </div>
+
+            <!-- <div class="col-lg-9 col-sm-12">
+              <div class="media media-list-view mb-5">
+                <a class="media-img" href="course-single.html">
+                  <img src="assets/img/courses/courses-img1.jpg" alt="Image">
+                  <div class="media-img-overlay">
+                    <span class="badge badge-warning badge-rounded-circle">$50</span>
+                  </div>
+                </a>
+
+                <div class="media-body">
+                  <h3>
+                    <a class="text-warning" href="course-single.html">Phasellus convallis eros.</a>
+                  </h3>
+
+                  <ul class="list-unstyled d-flex text-muted mb-3">
+                    <li class="mr-3">
+                      <i class="fa fa-calendar-o mr-2" aria-hidden="true"></i>Age 2 to 4 Years
+                    </li>
+                    <li>
+                      <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>9.00AM-11.00AM
+                    </li>
+                  </ul>
+
+                  <p class="text-justify mb-lg-2">They must explain to you how all this mistaken idea of denouncing pleasure and
+                    praising pain was born and I will give you a complete account of the system, and expound the actual teachings of
+                    the great explorer.</p>
+
+                  <div class="">
+                    <a href="product-cart.html" class="btn btn-sm btn-white text-uppercase mb-1 mr-2 btn-hover-warning">
+                      <i class="fa fa-shopping-basket mr-2" aria-hidden="true"></i>Add to Cart
+                    </a>
+                    <a class="btn btn-link text-hover-warning text-underline pl-0" href="course-single.html">
+                      <i class="fa fa-angle-double-right mr-1" aria-hidden="true"></i> More
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div> -->
+
+            <datalist id="specializations">
+              <option v-for="nanny in nannies">{{ nanny.specialization }}</option>
+            </datalist>
+
+            <!-- <div v-for="nanny in filterBy(nannies, specializationFilter, 'specialization')" class="col-md-6"> -->
+            <div v-for="nanny in filterBy(orderBy(nannies, sortAttribute), specializationFilter, 'specialization')" class="col-md-6">
               <div class="media media-events-list bg-purple">
                 <a class="media-img position-relative" href="event-single-left-sidebar.html">
                   <img v-bind:src="nanny.image_url" alt="events-image">
@@ -146,14 +269,15 @@
               </div>
             </div>
 
+
           </div>
         </div>
 
-        <!-- <div class="mt-6"> -->
+        <div class="mt-6 mt-lg-8">
           <!-- ====================================
       ——— PAGINATION
       ===================================== -->
-   <!--    <section class="py-5">
+      <section class="py-5">
         <div class="container">
           <nav aria-label="Page navigation example">
             <nav aria-label="Page navigation example">
@@ -176,20 +300,13 @@
             </nav>      
           </nav>
         </div>
-      </section> -->
+      </section>
 
-        <!-- </div> -->
+        </div>
       </section>
 
 
     </div>
-
-      
-
- 
-
-
-
 
   </div>
 </template>
@@ -202,12 +319,17 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from 'vue2-filters';
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
       message: "Welcome to Nannies App",
-      nannies: []
+      nannies: [],
+      nameFilter: "",
+      specializationFilter: "",
+      sortAttribute: "first_name"
     };
   },
   created: function() {
@@ -216,6 +338,10 @@ export default {
       console.log(this.nannies);
     });
   },
-  methods: {}
+  methods: {
+    setSortAttribute: function(attribute) {
+      this.sortAttribute = attribute;
+    }
+  }
 };
 </script>
