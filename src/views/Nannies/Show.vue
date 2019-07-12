@@ -186,7 +186,7 @@
                               </li>
                               <li class="d-flex align-items-baseline mb-3">
                                 <i class="fa fa-clock-o mr-2 text-purple" aria-hidden="true"></i>
-                                {{ booking.start_time }}
+                                {{ booking.start_time + ' - ' + booking.end_time }}
                               </li>
                               <li class="d-flex align-items-baseline mb-3">
                                 <i class="fa fa-clock-o mr-2 text-purple" aria-hidden="true"></i>

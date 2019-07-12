@@ -7,7 +7,7 @@
     </ul>
 
     <!-- ====================================
-    ——— CHECK-OUT SECTION
+    ——— EDIT NANNY
     ===================================== -->
     <section class="py-7 py-md-10">
       <div class="container">

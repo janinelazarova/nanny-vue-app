@@ -179,8 +179,8 @@
                 </div>
 
                 <div class="form-group">
-                  <button class="btn btn-pink text-white text-uppercase" v-on:click="setSortAttribute('rate')">Sort By Rate</button>
-                  <button class="btn btn-pink text-white text-uppercase" v-on:click="setSortAttribute('first_name')">Sort By Name</button>
+                  <button class="btn btn-pink btn-lg text-white text-uppercase" v-on:click="setSortAttribute('rate')">Sort By Rate</button>
+                  <button class="btn btn-pink btn-lg text-white text-uppercase" v-on:click="setSortAttribute('first_name')">Sort By Name</button>
                 </div>
       
               </div>
