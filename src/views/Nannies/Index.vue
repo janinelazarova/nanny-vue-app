@@ -5,7 +5,8 @@
   ——— JUMBOTRON
   ===================================== -->
 
-    <section class="breadcrumb-bg" style="background-image: url(/assets/img/background/page-title-bg-img.jpg); ">
+    <!-- <section class="breadcrumb-bg" style="background-image: url(/assets/img/background/page-title-bg-img.jpg); "> -->
+    <section class="breadcrumb-bg" style="background: linear-gradient(rgba(138,15,212,0.5), rgba(199,9,226,0.5)), url(/assets/img/background/page-title-bg-img.jpg); ">
       <div class="container">
         <div class="breadcrumb-holder">
           <div>
