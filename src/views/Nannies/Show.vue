@@ -29,8 +29,8 @@
     </div>
     
        <div class="container">
-        <div class="col-lg-12 mb-8">
-          <ul class="nav nav-pills justify-content-end"  id="pills-tab" role="tablist">
+        <div class="col-lg-12 justify-content-center mb-8">
+          <ul class="nav nav-pills justify-content-center"  id="pills-tab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active btn-purple" id="pills-home-tab" data-toggle="pill" href="#pills-personal-info" role="tab" aria-controls="pills-home"
                 aria-selected="true">Personal Info</a>
@@ -42,6 +42,12 @@
             <li class="nav-item">
               <a class="nav-link btn-purple" id="pills-contact-tab" data-toggle="pill" href="#pills-reviews" role="tab" aria-controls="pills-contact"
                 aria-selected="false">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link btn-purple" id="pills-contact-tab" data-toggle="pill" href="#pills-reviews" role="tab" aria-controls="pills-contact"
+                aria-selected="false" v-bind:to="'/nannies/' + nanny.id + '/edit'">
+                Edit Profile
+              </router-link>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
