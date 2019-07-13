@@ -52,7 +52,7 @@
                   <div class="mt-4">
                     <button type="submit" class="btn btn-danger text-white text-uppercase">create booking</button>
                   </div>
-                  
+
                 </div>
               </div>
     
@@ -130,15 +130,15 @@
   <div class="form-group">
     <label for="start_time">Start Time</label>
     <h1>{{ newBookingStartTime }}</h1>
-    <flat-pickr v-model="newBookingStartTime" id="start_time" format="HH:mm:ss">
+    <flat-pickr :config="config" v-model="newBookingStartTime" id="start_time">
     </flat-pickr>
   </div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="end_time">End Time</label>
     <vue-timepicker id="end_time" format="HH:mm:ss" class="form-control" v-model="newBookingEndTime">
     </vue-timepicker>
-  </div>
+  </div> -->
 
   <div class="form-group">
     <label for="notes">Notes</label>
@@ -156,7 +156,7 @@
 <script>
 import axios from "axios";
 import Datepicker from 'vuejs-datepicker';
-import VueTimepicker from 'vue2-timepicker';
+// import VueTimepicker from 'vue2-timepicker';
 import flatPickr from 'vue-flatpickr-component';
 import 'flatpickr/dist/flatpickr.css';
 
@@ -165,10 +165,8 @@ import 'flatpickr/dist/flatpickr.css';
 export default {
   components: {
     Datepicker,
-    VueTimepicker,
-    flatPickr,
-    enableTime: true,
-    noCalendar: true
+    // VueTimepicker,
+    flatPickr
   },
   data: function() {
     return {
@@ -188,7 +186,14 @@ export default {
        ss: "00"
       },
       newBookingNotes: "",
-      errors: []
+      errors: [],
+      config:
+      {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        defaultDate: "13:45"
+      }
     };
   },
   methods: {
