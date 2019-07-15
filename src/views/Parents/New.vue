@@ -2,9 +2,64 @@
   <div class="parents-new">
 
     <!-- ====================================
+    ——— SIGN-UP PARENT
+    ===================================== -->
+    <section class="py-8 py-md-10">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-lg-12">
+            <div class="mb-4 mb-sm-0">
+              <div class="bg-purple rounded-top p-2">
+                <h3 class="text-white text-uppercase font-weight-bold mb-0 ml-2">Create A Parent Account</h3>
+              </div>
+
+              <div class="border rounded-bottom-sm border-top-0">
+                <div class="p-3">
+                  <form v-on:submit.prevent="submit()">
+                    <div class="form-group form-group-icon">
+                      <input type="email" class="form-control border" placeholder="Email" required="" v-model="newParentEmail">
+                    </div>
+
+                    <div class="form-group form-group-icon">
+                      <input type="password" class="form-control border" placeholder="Password" required="" v-model="newParentPassword">
+                    </div>
+
+                    <div class="form-group form-group-icon">
+                      <input type="text" class="form-control border" placeholder="First Name" required="" v-model="newParentFirstName">
+                    </div>
+
+                    <div class="form-group form-group-icon">
+                      <input type="text" class="form-control border" placeholder="Last Name" required="" v-model="newParentLastName">
+                    </div>
+
+                    <div class="form-group form-group-icon">
+                      <input type="text" class="form-control border" placeholder="Phone Number" required="" v-model="newParentPhoneNumber">
+                    </div>
+
+                    <div class="form-group form-group-icon">
+                      <input type="text" class="form-control border" placeholder="Address" required="" rows="3" v-model="newParentAddress">
+                    </div>
+
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-pink text-white text-uppercase w-100">Register</button>
+                    </div>
+
+                    <div class="form-group text-center text-secondary mb-0">
+                      <p class="mb-0">Allready have an account? <a class="text-danger" href="/parents/login">Log in</a></p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================
   ——— BREADCRUMB
   ===================================== -->
-  <section class="breadcrumb-bg" style="background-image: url(assets/img/background/page-title-bg-img.jpg); ">
+  <!-- <section class="breadcrumb-bg" style="background-image: url(assets/img/background/page-title-bg-img.jpg); ">
     <div class="container">
       <div class="breadcrumb-holder">
         <div>
@@ -20,7 +75,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
     
   
 
@@ -76,7 +131,7 @@
           </div>
           </div>
         </div>
-      </div> --> -->
+      </div> --> 
 
     <!--   <div class="col-sm-6 col-lg-4">
         <div class="mb-4 mb-sm-0">
@@ -109,14 +164,14 @@
       </div> -->
   <!--   </div>
   </div>
-</section> --> -->
+</section> --> 
 
-  <div class="container">
-    <!-- <div class="row">
-      <div class="col-sm-6 offset-lg-2 col-lg-4"> -->
-        <!-- <div class="mb-4 mb-sm-0"> -->
-          <div class="bg-warning rounded-top p-2">
-            <h3 class="text-white font-weight-bold mb-0 ml-2">Create An Account</h3>
+
+<!-- <section class="py-8 py-md-10"> -->
+ <!--  <old form> -->
+<!--   <div class="container">
+          <div class="bg-purple rounded-top p-2">
+            <h3 class="text-white text-uppercase font-weight-bold mb-0 ml-2">Create A Parent Account</h3>
           </div>
 
           <div class="border rounded-bottom-sm border-top-0">
@@ -158,10 +213,7 @@
 
 </div>
           </div>
-        <!-- </div> -->
-     <!--  </div>
-    </div> -->
-  </div>
+  </div> -->
 
 
 

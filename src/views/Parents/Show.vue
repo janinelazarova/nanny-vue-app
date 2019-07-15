@@ -1,16 +1,51 @@
 <template>
   <div class="parents-show">
-     <div class="container">
 
-      <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
+   
+
+     <div class="container">
+      <!-- ====================================
+      ——— STAF SECTION
+      ===================================== -->
+      <section class="pt-9 pb-3 py-md-9 bg-pink" style="background-image: url(/assets/img/background/avator-bg.png);">
+          <!-- <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
+            <span class="shape shape-left bg-white"></span>
+            <h2 class="text-white">Meet Our Staff</h2>
+            <span class="shape shape-right bg-white"></span>
+          </div> -->
+      </section>
+
+     
+
+      <!-- ====================================
+      ——— JUMBOTRON
+      ===================================== -->
+
+        <section class="breadcrumb-bg" style="background: white; ">
+          <div class="container">
+            <div class="breadcrumb-holder">
+              <div>
+                <section>
+                  <div class="section-title justify-content-center mb-5 mb-md-8">
+                    <span class="shape shape-left bg-purple"></span>
+                      <h2 class="text-pink">{{ parent.first_name + ' ' + parent.last_name + ' Profile' }}</h2>
+                    <span class="shape shape-right bg-purple"></span>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      <!-- <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
         <span class="shape shape-left bg-info"></span>
         <h2 class="text-danger">Parent Profile</h2>
         <span class="shape shape-right bg-info"></span>
-      </div>
+      </div> -->
 
       <!-- <div class="col-lg-12 mb-8"> -->
         <!--  mb-8 wow fadeInUp --> 
-      <div class="col-lg-12 justify-content-center">  
+      <div class="col-lg-12">  
         <ul class="nav nav-pills justify-content-center"  id="pills-tab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active btn-purple" id="pills-home-tab" data-toggle="pill" href="#pills-personal-info" role="tab" aria-controls="pills-home"
@@ -18,18 +53,24 @@
           </li>
           <li class="nav-item">
             <a class="nav-link btn-purple" id="pills-profile-tab" data-toggle="pill" href="#pills-bookings" role="tab" aria-controls="pills-profile"
-              aria-selected="false">Bookings</a>
+              aria-selected="false">My Bookings</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn-purple" id="pills-contact-tab" data-toggle="pill" href="#pills-reviews" role="tab" aria-controls="pills-contact"
-              aria-selected="false">Reviews</a>
+              aria-selected="false">My Reviews</a>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link btn-purple" id="pills-contact-tab" data-toggle="pill" href="#pills-reviews" role="tab" aria-controls="pills-contact"
+            <router-link class="nav-link btn-purple" id="pills-contact-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-contact"
               aria-selected="false" v-bind:to="'/parents/' + parent.id + '/edit'">
               Edit Profile
             </router-link>
           </li>
+         <!--  <li class="nav-item">
+            <router-link class="nav-link btn-purple" id="pills-contact-tab" data-toggle="pill" href="#pills-booking" role="tab" aria-controls="pills-contact"
+              aria-selected="false" v-bind:to="/">
+              create a new booking
+            </router-link>
+          </li> -->
         </ul>
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-personal-info" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -175,21 +216,22 @@
             <section class="pb-10">
               <div class="container">
                 <div class="section-title justify-content-center mb-5 mb-md-8">
-                  <!-- <span class="shape shape-left bg-purple"></span>
-                  <h2 class="text-pink">My Reviews</h2>
-                  <span class="shape shape-right bg-purple"></span> -->
+                  <span class="shape shape-left bg-white"></span>
+                  <h2 class="text-white">My Reviews</h2>
+                  <span class="shape shape-right bg-white"></span>
                 </div>
                 <div v-for="review in parent.reviews">
                   <div class="row">
                     <div class="col-md-12 col-lg-12">
-                      <div class="card bg-purple card-hover mb-9">
+                      <div class="card bg-pink card-hover mb-9">
                         <div class="card-body text-center px-md-5 px-lg-6 my-2">
-                          <div class="card-icon-border-large border-purple mtn-80">
-                            <i class="fa fa-quote-left text-purple" aria-hidden="true"></i>
+                          <div class="card-icon-border-large border-pink mtn-80">
+                            <i class="fa fa-quote-left text-pink" aria-hidden="true"></i>
                           </div>
                           <blockquote class="blockquote blockquote-sm mt-2">
                             <p class="font-normal mb-5"> {{ review.comment }} </p>
-                            <footer class="blockquote-footer text-uppercase text-white"> {{ review.parent.first_name + ' ' + review.parent.last_name }} </footer>
+                            <footer class="blockquote-footer text-white"><u> Nanny:</u></footer>
+                            <footer class="blockquote-footer text-uppercase text-white"> {{ review.nanny.first_name + ' ' + review.nanny.last_name }} </footer>
                           </blockquote>
                         </div>
                       </div>
@@ -201,6 +243,16 @@
           </div>
         </div>
       </div>
+      <!-- ====================================
+      ——— STAF SECTION
+      ===================================== -->
+      <section class="pt-9 pb-3 py-md-9 bg-pink" style="background-image: url(/assets/img/background/avator-bg.png);">
+          <!-- <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
+            <span class="shape shape-left bg-white"></span>
+            <h2 class="text-white">Meet Our Staff</h2>
+            <span class="shape shape-right bg-white"></span>
+          </div> -->
+      </section>
     </div>
 
   </div>

@@ -7,6 +7,7 @@ import NanniesEdit from './views/Nannies/Edit.vue';
 // import Signup from './views/Nannies/Signup.vue';
 import NanniesLogin from './views/Nannies/Login.vue';
 import Logout from './views/Nannies/Logout.vue';
+import NanniesSearch from './views/Nannies/Search.vue';
 
 import ParentsLogin from './views/Parents/Login.vue';
 import ParentsNew from './views/Parents/New.vue';
@@ -68,6 +69,11 @@ export default new Router({
       path: '/nannies/:id/edit',
       name: 'nannies-edit',
       component: NanniesEdit
+    },
+    {
+      path: '/search/nannies',
+      name: 'nannies-search',
+      component: NanniesSearch
     },
     // {
     //   path: '/signup',

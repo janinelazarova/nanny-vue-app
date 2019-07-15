@@ -3,19 +3,11 @@
       <!-- ====================================
       ——— BREADCRUMB
       ===================================== -->
-      <section class="breadcrumb-bg" style="background-image: url(/assets/img/background/page-title-bg-img.jpg); ">
+      <section class="breadcrumb-bg" style="background: linear-gradient(rgba(138,15,212,0.5), rgba(199,9,226,0.5)), url(/assets/img/background/page-title-bg-img.jpg);">
         <div class="container">
           <div class="breadcrumb-holder">
             <div>
-              <h1 class="breadcrumb-title">Events Left Sidebar</h1>
-              <ul class="breadcrumb breadcrumb-transparent">
-                <li class="breadcrumb-item">
-                  <a class="text-white" href="index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item text-white active" aria-current="page">
-                  Events Left Sidebar
-                </li>
-              </ul>
+              <h1 class="breadcrumb-title">Booking Details</h1>
             </div>
           </div>
         </div>
@@ -33,9 +25,72 @@
                 <img class="w-100 rounded-top" src="/assets/img/features/feature-course-single-title.jpg" alt="events-xl-img1.jpg">
               </div>
 
-              <div class="card-body border-top-5 px-3 border-warning">
-                <h3 class="text-warning font-weight-bold mb-4">Booking Notes</h3>
+              <div class="card-body border-top-5 px-3 border-purple">
+                <h3 class="text-purple font-weight-bold mb-4">Booking Notes</h3>
                 <p class="text-muted mb-6">{{ booking.notes }}</p>
+              </div>
+
+<!-- 
+              <router-link v-if="isParentLoggedIn()" v-bind:to="'/bookings/' + booking.id + '/edit'" class="btn btn-pink text-white text-uppercase w-100" href="javascript:void(0)" data-toggle="modal" data-target="#modal-enrolAccount">Leave a review</router-link> -->
+
+              <!-- Elements Modal -->
+              <div class="py-5" id="modal">
+               
+
+                <div class="row">
+                  <div class="col-lg-9 col-sm-8 col-xs-12 order-sm-1">
+                  <!-- <div class="col-md-6 col-lg-4"> -->
+                    <!-- <h3 class="element-title mb-5">Modal Default</h3> -->
+                    <!-- Button trigger modal -->
+                    <button v-if="isParentLoggedIn()" type="button" class="btn btn-pink text-white text-uppercase w-100" data-toggle="modal" data-target="#reviewModal">
+                      leave a review
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade mb-8" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <!-- <p>Modal body text goes here.</p> -->
+                            <div class="bg-light shadow-sm rounded p-3">
+                              <h3 class="mb-4 text-pink font-weight-bold">Leave A Comment</h3>
+
+                              <form v-on:submit.prevent="submit()">
+                                <div class="row">
+                                  <div class="col-12 col-md-12">
+                                    <div class="form-group form-group-icon">
+                                      <i class="fa fa-chrome"></i>
+                                      <input type="text" class="form-control border-purple" placeholder="Stars" v-model="newReviewStars">
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group form-group-icon">
+                                      <i class="fa fa-comments "></i>
+                                      <textarea class="form-control border-info" placeholder="Comment" rows="6" v-model="newReviewComment"></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-pink text-white text-uppercase">submit</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -44,27 +99,37 @@
 
           <div class="col-lg-3 col-sm-4 col-xs-12">
             <div class="">
-              <div class="section-title bg-warning rounded-top">
+              <div class="section-title bg-purple rounded-top">
                 <h3 class="text-capitalize text-white font-weight-bold rounded py-2 pl-3 mb-0">booking info</h3>
               </div>
               <div class="border border-top-0 px-4 py-5 rounded-bottom">
                 <div class="media mb-3">
-                  <div class="icon-rounded-circle-medium mr-3 bg-success">
+                  <div class="icon-rounded-circle-medium mr-3 bg-purple">
                     <i class="fa fa-calendar text-white" aria-hidden="true"></i>
                   </div>
                   <div class="media-body">
-                    <h4 class="text-uppercase text-success mt-0 font-weight-bold">date</h4>
+                    <h4 class="text-uppercase text-purple mt-0 font-weight-bold">date</h4>
                     <time class="text-muted font-weight-bold">{{ booking.start_date }}</time>
                   </div>
                 </div>
 
                 <div class="media mb-3">
-                  <div class="icon-rounded-circle-medium mr-3 bg-danger">
+                  <div class="icon-rounded-circle-medium mr-3 bg-purple">
                     <i class="fa fa-clock-o text-white" aria-hidden="true"></i>
                   </div>
                   <div class="media-body">
-                    <h4 class="text-uppercase text-danger mt-0 font-weight-bold">time</h4>
+                    <h4 class="text-uppercase text-purple mt-0 font-weight-bold">time</h4>
                     <time class="text-muted font-weight-bold">{{ booking.start_time + '-' + booking.end_time }}</time>
+                  </div>
+                </div>
+
+                <div class="media mb-3">
+                  <div class="icon-rounded-circle-medium mr-3 bg-purple">
+                    <i class="fa fa-shield text-white" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="text-uppercase text-purple mt-0 font-weight-bold">nanny name</h4>
+                    <p class="text-muted font-weight-bold mb-0">{{ booking.nanny.first_name + ' ' + booking.nanny.last_name }}</p>
                   </div>
                 </div>
 
@@ -89,16 +154,17 @@
                 </div>
 
                 <div class="media mb-4">
-                  <div class="icon-rounded-circle-medium mr-3 bg-info">
+                  <div class="icon-rounded-circle-medium mr-3 bg-purple">
                     <i class="fa fa-phone text-white" aria-hidden="true"></i>
                   </div>
                   <div class="media-body">
-                    <h4 class="text-uppercase text-info mt-0 font-weight-bold">parent contact</h4>
+                    <h4 class="text-uppercase text-purple mt-0 font-weight-bold">parent contact</h4>
                     <time class="text-muted font-weight-bold">{{ booking.parent.phone_number }}</time>
                   </div>
                 </div>
 
-                <router-link v-bind:to="'/bookings/' + booking.id + '/edit'" class="btn btn-primary text-white text-uppercase w-100" href="javascript:void(0)" data-toggle="modal" data-target="#modal-enrolAccount">Edit Booking</router-link>
+                <router-link v-bind:to="'/bookings/' + booking.id + '/edit'" class="btn btn-pink text-white text-uppercase w-100" href="javascript:void(0)" data-toggle="modal" data-target="#modal-enrolAccount">Edit Booking</router-link>
+
               </div>
             </div>
           </div>
@@ -141,7 +207,12 @@ import axios from "axios";
 export default {
   data:function() {
     return {
-      booking: {}
+      booking: {},
+      // newReviewNannyId: this.booking.nanny_id,
+      // newReviewParentId: this.booking.parent_id,
+      newReviewStars: "",
+      newReviewComment: "",
+      errors: []
     };
   },
   created: function() {
@@ -151,19 +222,34 @@ export default {
     });
   },
   methods: {
-     isNannyLoggedIn: function() {
-       if (localStorage.getItem("is_nanny")) {
-         return true;
-       }
-       return false;
-     },
-     isParentLoggedIn: function() {
-       if (localStorage.getItem("is_parent")) {
-         return true;
-       }
-       return false;
-     }
-   }
+    submit: function() {
+      var params = {
+        nanny_id: this.booking.nanny.id,
+        parent_id: this.booking.parent.id,
+        stars: this.newReviewStars,
+        comment: this.newReviewComment
+      };
+      axios.post("/api/reviews", params).then(response => {
+        $('#reviewModal').modal('hide');
+        console.log(response.data);
+        this.$router.push("/parents/" + this.booking.parent.id);
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+      });
+    },
+    isNannyLoggedIn: function() {
+      if (localStorage.getItem("is_nanny")) {
+        return true;
+      }
+      return false;
+    },
+    isParentLoggedIn: function() {
+      if (localStorage.getItem("is_parent")) {
+        return true;
+      }
+      return false;
+    }
+  }
 
 };
 </script>

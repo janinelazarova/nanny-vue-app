@@ -43,7 +43,7 @@
       <nav class="navbar navbar-expand-lg navbar-scrollUp navbar-sticky navbar-white">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img class="d-inline-block" src="assets/img/logo-school.png" alt="Kidz School">
+            <img class="d-inline-block" src="/assets/img/kiddo-app-new.png" alt="Kidz School">
           </a>
 
           <button class="navbar-toggler py-2" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -76,7 +76,7 @@
 
               <li class="nav-item dropdown bg-purple" v-if="!isNannyLoggedIn() && isParentLoggedIn()">
                 <router-link class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
-                  data-toggle="dropdown" v-bind:to="'/parents/' + parent_id">
+                  data-toggle="dropdown" v-bind:to="'/parents/' + getParentId()">
                   <i class="fa fa-list-ul nav-icon" aria-hidden="true"></i>
                   <span style="bg-purple">My Profile</span>
                   </router-link>
@@ -84,7 +84,7 @@
 
               <li class="nav-item dropdown bg-purple" v-if="!isParentLoggedIn() && isNannyLoggedIn()">
                 <router-link class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
-                  data-toggle="dropdown" v-bind:to="'/nannies/' + nanny_id">
+                  data-toggle="dropdown" v-bind:to="'/nannies/' + nanny.id">
                   <i class="fa fa-list-ul nav-icon" aria-hidden="true"></i>
                   <span style="bg-purple">My Profile</span>
                   </router-link>
@@ -171,15 +171,12 @@
           <div class="row">
             <div class="col-sm-6 col-lg-3 col-xs-12">
               <a class="mb-6 d-block" href="index.html">
-                <img class="img-fluid d-inline-block w-50 lazyestload" data-src="assets/img/logo-footer.png" src="assets/img/logo-footer.png">
+                <img class="img-fluid d-inline-block w-50" data-src="/assets/img/kido-app-new.png" src="/assets/img/kiddo-app-new.png">
               </a>
-              <p class="mb-6">Excepteur sint occaecat cupidatat non proident, sunt in culpa officia.Lorem ipsum dolor sit
-                amet.</p>
-              <p class="mb-6">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.</p>
+              <p class="mb-6">We were inspired to start Kiddo App out of a need and desire. As young, modern parents we wanted a better childcare option – one that was filled with unique experiences and inspiring role models for our kiddos. We also wanted something that felt good for us, as parents, to use.</p>
             </div>
 
-            <div class="col-sm-6 col-lg-3 col-xs-12">
+            <!-- <div class="col-sm-6 col-lg-3 col-xs-12">
               <h4 class="section-title-sm font-weight-bold text-white mb-6">Useful Links</h4>
               <ul class="list-unstyled">
                 <li class="mb-4">
@@ -209,9 +206,9 @@
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> -->
 
-            <div class="col-sm-6 col-lg-3 col-xs-12">
+           <!--  <div class="col-sm-6 col-lg-3 col-xs-12">
               <h4 class="section-title-sm font-weight-bold text-white mb-6">Recent Post</h4>
               <ul class="list-unstyled list-item-border-bottom">
                 <li class="mb-4 pb-4">
@@ -276,7 +273,7 @@
                   </div>
                 </div>
               </form>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -352,27 +349,48 @@
 </style>
 
 <script>
-  export default {
-    data: function() {
-      return {
-        parentname: localStorage.getItem("parentname"),
-        nannyname: localStorage.getItem("nannyname"),
-        parent_id: localStorage.getItem("parent_id"),
-        nanny_id: localStorage.getItem("nanny_id")
-      };
+import axios from "axios";
+
+
+export default {
+  data: function() {
+    return {
+      parent: {},
+      nanny: {}
+      // parentname: localStorage.getItem("parentname"),
+      // nannyname: localStorage.getItem("nannyname"),
+      // parent_id: localStorage.getItem("parent_id"),
+      // nanny_id: localStorage.getItem("nanny_id")
+    };
+  },
+  created: function() {
+    axios.get("/api/parents/" + localStorage.getItem('parent_id')).then(response => {
+      this.parent = response.data;
+      console.log(this.parent);
+    });
+    axios.get("/api/nannies/" + localStorage.getItem('nanny_id')).then(response => {
+      this.nanny = response.data;
+      console.log(this.nanny);
+    });
+  },
+  methods: {
+    isNannyLoggedIn: function() {
+      if (localStorage.getItem("is_nanny")) {
+        return true;
+      }
+      return false;
     },
-    methods: {
-      isNannyLoggedIn: function() {
-        if (localStorage.getItem("is_nanny")) {
-          return true;
-       }
-        return false;
+    isParentLoggedIn: function() {
+      if (localStorage.getItem("is_parent")) {
+        return true;
+      }
+      return false;
     },
-      isParentLoggedIn: function() {
-        if (localStorage.getItem("is_parent")) {
-          return true;
-       }
-        return false;
+    getParentId: function() {
+      return localStorage.getItem("parent_id");
+    },
+    getNannyId: function() {
+      return localStorage.getItem("nanny_id");
     }
     // isLoggedIn: function() {
     //   if (localStorage.getItem("jwt")) {

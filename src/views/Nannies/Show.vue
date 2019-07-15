@@ -5,32 +5,34 @@
   ——— JUMBOTRON
   ===================================== -->
 
-    <!-- <section class="breadcrumb-bg" style="background-image: url(/assets/img/background/avator-bg.png); ">
+    <section class="breadcrumb-bg" style="background: white; ">
+      <!-- <section class="breadcrumb-bg" style="background-image: url(/assets/img/background/avator-bg.png); "> -->
       <div class="container">
         <div class="breadcrumb-holder">
           <div>
             <section>
               <div class="section-title justify-content-center mb-5 mb-md-8">
-                <span class="shape shape-left bg-white"></span>
-                  <h2 class="text-white">{{ nanny.first_name + ' ' + nanny.last_name + ' Profile' }}</h2>
-                <span class="shape shape-right bg-white"></span>
+                <span class="shape shape-left bg-purple"></span>
+                  <h2 class="text-pink">{{ nanny.first_name + ' ' + nanny.last_name + ' Profile' }}</h2>
+                <span class="shape shape-right bg-purple"></span>
               </div>
             </section>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
-
-    <div class="section-title justify-content-center mb-5 mb-md-8">
+    
+   <!--  <div class="section-title justify-content-center mb-5 mb-md-8">
       <span class="shape shape-left bg-purple"></span>
       <h2 class="text-pink">{{ nanny.first_name + ' ' + nanny.last_name + ' Profile' }}</h2>
       <span class="shape shape-right bg-purple"></span>
     </div>
+ -->
     
        <div class="container">
         <div class="col-lg-12 justify-content-center mb-8">
-          <ul class="nav nav-pills justify-content-center"  id="pills-tab" role="tablist">
+          <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist" v-if="isNannyLoggedIn()">
             <li class="nav-item">
               <a class="nav-link active btn-purple" id="pills-home-tab" data-toggle="pill" href="#pills-personal-info" role="tab" aria-controls="pills-home"
                 aria-selected="true">Personal Info</a>
@@ -130,16 +132,123 @@
                                 </div>
                             </div>
 
-                            <div class="text-center mb-6" v-else-if="isParentLoggedIn()">
+                            <!-- Elements Modal -->
+                            <div class="py-5" id="modal">
+                             
+
+                              <div class="row">
+                                <div class="col-lg-9 col-sm-8 col-xs-12 order-sm-1">
+                                  <!-- Button trigger modal -->
+                                  <!-- <button type="button" class="btn btn-pink btn-lg btn-block text-uppercase text-white w-100">{{ 'Book ' + nanny.first_name }}
+                                  </button> -->
+                                  <button v-if="isParentLoggedIn()" type="button" class="btn btn-pink text-white text-uppercase w-100" data-toggle="modal" data-target="#bookingModal">
+                                    {{ 'Book ' + nanny.first_name }}
+                                  </button>
+
+                                  <!-- Modal -->
+                                  <div class="modal fade mb-8" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <!-- <p>Modal body text goes here.</p> -->
+                                          <div class="bg-light shadow-sm rounded p-3">
+                                          <!-- <div class="col-md-12 col-lg-12 order-1 order-md-0"> -->
+                                            <form v-on:submit.prevent="submit()" class="" action="index.html" method="post">
+                                              <div class="card bg-transparent shadow-none">
+                                                <div class="card-header card-header-lg bg-danger text-white p-6 rounded-top">
+                                                  <h4 class="font-weight-bold mb-0">Create a Booking</h4>
+                                                </div>
+
+                                                <div class="card-body border border-top-0 rounded-bottom-sm p-7">
+                                                                                          
+                                                    <div class="form-group form-group-icon col-lg-12">
+                                                      <label for="start_date">Start Date</label>
+                                                      <datepicker v-model="newBookingStartDate" class="form-control border-warning rounded-sm" id="start_date">
+                                                      </datepicker>
+                                                    </div>
+
+                                                    <div class="form-group form-group-icon col-lg-12">
+                                                      <label for="hours">Hours</label>
+                                                      <input type="number" class="form-control border-warning rounded-sm" id="state" v-model="newBookingHours">
+                                                    </div>
+                                                  
+                                                    <div class="form-group form-group-icon col-lg-12">
+                                                      <label for="start_time">Start Time</label>
+                                                      <flat-pickr :config="config" v-model="newBookingStartTime" class="form-control border-success rounded-sm" id="start_time">
+                                                      </flat-pickr>
+                                                    </div>
+
+                                                    <div class="form-group form-group-icon col-lg-12">
+                                                      <label for="country">End Time</label>
+                                                      <flat-pickr :config="config" v-model="newBookingEndTime" class="form-control border-success rounded-sm" id="end_time">
+                                                      </flat-pickr>
+                                                    </div>
+
+                                                  <div class="form-group mb-4">
+                                                    <label class="" for="text-aria">Notes</label>
+                                                    <textarea name="notes" class="form-control border-purple rounded-sm" rows="7" cols="95" id="notes" v-model="newBookingNotes"></textarea>
+                                                  </div>
+
+                                                  <div class="mt-4">
+                                                    <button type="submit" class="btn btn-danger text-white text-uppercase">create booking</button>
+                                                  </div>
+
+                                                </div>
+                                              </div>
+                                          
+                                            </form>
+                                          </div>
+                                          <!-- <div class="bg-light shadow-sm rounded p-3">
+                                            <h3 class="mb-4 text-pink font-weight-bold">Leave A Comment</h3>
+
+                                            <form v-on:submit.prevent="submit()">
+                                              <div class="row">
+                                                <div class="col-12 col-md-12">
+                                                  <div class="form-group form-group-icon">
+                                                    <i class="fa fa-chrome"></i>
+                                                    <input type="text" class="form-control border-purple" placeholder="Stars" v-model="newReviewStars">
+                                                  </div>
+                                                </div>
+                                              </div>
+
+                                              <div class="row">
+                                                <div class="col">
+                                                  <div class="form-group form-group-icon">
+                                                    <i class="fa fa-comments "></i>
+                                                    <textarea class="form-control border-info" placeholder="Comment" rows="6" v-model="newReviewComment"></textarea>
+                                                  </div>
+                                                </div>
+                                              </div>
+
+                                              <button type="submit" class="btn btn-pink text-white text-uppercase">submit</button>
+                                            </form>
+                                          </div> -->
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  
+                                </div>
+                              </div>
+                            </div>
+
+                           <!--  <div class="text-center mb-6" v-if="isParentLoggedIn()">
                                 <div class="mb-8">
                                   <router-link v-bind:to="'/bookings/new'">
                                     <button type="button" class="btn btn-pink btn-lg btn-block text-uppercase text-white w-100">{{ 'Book ' + nanny.first_name }}
                                     </button>
                                   </router-link>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="text-center text-white mb-6" v-else>
+                            <div class="text-center text-white mb-6" v-if="!isParentLoggedIn() && !isNannyLoggedIn()">
                                 <div class="mb-8">
                                   <router-link v-bind:to="'/parents/login'">
                                     <button type="button" class="btn btn-pink btn-lg btn-block text-uppercase text-white w-100">{{ 'Login to Book ' + nanny.first_name }}
@@ -258,15 +367,37 @@
 
 <script>
 import axios from "axios";
+import Datepicker from 'vuejs-datepicker';
+import flatPickr from 'vue-flatpickr-component';
+import 'flatpickr/dist/flatpickr.css';
+
 
 export default {
+  components: {
+    Datepicker,
+    flatPickr
+  },
   data:function() {
     return {
       nanny: {},
-      message: "Bookings",
-      // nannies: [],
+      parent: {},
       bookings: [],
-      reviews: []
+      reviews: [],
+      newBookingNannyId: "",
+      newBookingParentId: "",
+      newBookingHours: "",
+      newBookingStartDate: "",
+      newBookingStartTime: "",
+      newBookingEndTime: "",
+      newBookingNotes: "",
+      errors: [],
+      config:
+      {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: false
+      }
     };
   },
   created: function() {
@@ -276,6 +407,23 @@ export default {
     });
   },
   methods: {
+    submit: function() {
+      var params = {
+        nanny_id: this.nanny.id,
+        hours: this.newBookingHours,
+        start_date: this.newBookingStartDate,
+        start_time: this.newBookingStartTime,
+        end_time: this.newBookingEndTime,
+        notes: this.newBookingNotes
+      };
+      axios.post("/api/bookings", params).then(response => {
+        $('#bookingModal').modal('hide');
+        console.log(response.data);
+        this.$router.push("/");
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+      });
+    },
     isNannyLoggedIn: function() {
       if (localStorage.getItem("is_nanny")) {
         return true;
@@ -288,6 +436,7 @@ export default {
       }
       return false;
     }
+    
   }
 
 };
