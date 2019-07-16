@@ -90,9 +90,9 @@
               </div>
 
               <div class="pull-left mt-4">
-                  <button type="submit" class="btn btn-danger text-white text-uppercase">update</button>
+                  <button type="submit" class="btn btn-pink text-white text-uppercase ml-1 mr-1">update</button>
                   <router-link v-bind:to="'/nannies/' + this.nanny.id">
-                    <button type="submit" class="btn btn-pink text-white text-uppercase">my profile</button>
+                    <button type="submit" class="btn btn-pink text-white text-uppercase ml-1 mr-1">my profile</button>
                   </router-link>
               </div>
             

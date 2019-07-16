@@ -29,7 +29,7 @@
       <!-- ====================================
       ——— SERVICE STYLE 3
       ===================================== -->
-      <section class="pt-10 pb-7 pb-md-9">
+      <section class="pt-10">
         <div class="container">
           <div class="section-title justify-content-center mb-4 mb-md-8">
             <span class="shape shape-left bg-purple"></span>

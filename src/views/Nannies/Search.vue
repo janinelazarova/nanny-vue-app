@@ -1,5 +1,6 @@
 <template>
   <div class="nannies-search">
+    <div id='map'></div>
 
     <!-- ====================================
   ——— JUMBOTRON
@@ -537,6 +538,9 @@
   img.card-img-top {
     max-height: 300px;
   }
+  #map {
+    height: 500px;
+  }
 </style>
 
 <script>
@@ -563,6 +567,29 @@ export default {
     setSortAttribute: function(attribute) {
       this.sortAttribute = attribute;
     }
+  },
+  mounted: function() {
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamFuaW5pdG8iLCJhIjoiY2p4YW1idm1uMTg4cTN4bG1zMjN0ZXVlNyJ9.biAgrKD6Jj3e2_FFDyj2kA';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/janinito/cjy5lf26i0t461cs00lq19pbk', // stylesheet location
+        center: [-104.8, 39.75], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+   
+    this.nannies.forEach(function(nanny) {
+      console.log(this.nanny.first_name);
+      // create the popup
+      var popup = new mapboxgl.Popup({ offset: 25 })
+      .setText(this.nanny.first_name);
+      //create the marker
+      var marker = new mapboxgl.Marker({
+      draggable: true
+      })
+      .setLngLat([this.nanny.longitude, this.nanny.latitude ])
+      .setPopup(popup) // sets a popup on this marker
+      .addTo(map);   
+    });
   }
 };
 </script>

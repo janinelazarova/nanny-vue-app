@@ -1,19 +1,20 @@
 <template>
   <div class="parents-show">
+    <!-- ====================================
+    ——— Welcome SECTION
+    ===================================== -->
+    <section class=" py-md-3 bg-purple" style="background-image: url(/assets/img/background/avator-bg.png);">
+        <div class="pt-5 pb-5 section-title justify-content-center mb-1 mb-md-3">
+          <span class="shape shape-left bg-white"></span>
+          <h2 class="text-white">{{ 'Welcome, ' + parent.first_name }}</h2>
+          <span class="shape shape-right bg-white"></span>
+        </div>
+    </section>
 
    
 
-     <div class="container">
-      <!-- ====================================
-      ——— STAF SECTION
-      ===================================== -->
-      <section class="pt-9 pb-3 py-md-9 bg-pink" style="background-image: url(/assets/img/background/avator-bg.png);">
-          <!-- <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
-            <span class="shape shape-left bg-white"></span>
-            <h2 class="text-white">Meet Our Staff</h2>
-            <span class="shape shape-right bg-white"></span>
-          </div> -->
-      </section>
+    <div class="container">
+     
 
      
 
@@ -21,12 +22,12 @@
       ——— JUMBOTRON
       ===================================== -->
 
-        <section class="breadcrumb-bg" style="background: white; ">
+      <!--   <section class="breadcrumb-bg" style="background: white; ">
           <div class="container">
             <div class="breadcrumb-holder">
               <div>
                 <section>
-                  <div class="section-title justify-content-center mb-5 mb-md-8">
+                  <div class="section-title justify-content-center mb-5 mb-md-3">
                     <span class="shape shape-left bg-purple"></span>
                       <h2 class="text-pink">{{ parent.first_name + ' ' + parent.last_name + ' Profile' }}</h2>
                     <span class="shape shape-right bg-purple"></span>
@@ -35,18 +36,12 @@
               </div>
             </div>
           </div>
-        </section>
-
-      <!-- <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
-        <span class="shape shape-left bg-info"></span>
-        <h2 class="text-danger">Parent Profile</h2>
-        <span class="shape shape-right bg-info"></span>
-      </div> -->
+        </section> -->
 
       <!-- <div class="col-lg-12 mb-8"> -->
         <!--  mb-8 wow fadeInUp --> 
       <div class="col-lg-12">  
-        <ul class="nav nav-pills justify-content-center"  id="pills-tab" role="tablist">
+        <ul class="nav nav-pills justify-content-center pt-7 pb-3"  id="pills-tab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active btn-purple" id="pills-home-tab" data-toggle="pill" href="#pills-personal-info" role="tab" aria-controls="pills-home"
               aria-selected="true">Personal Info</a>
@@ -89,7 +84,7 @@
                       <div class="col-lg-12 col-md-12">
                         <div class="pb-4 mb-2">
                           <div class="section-title bg-purple rounded-top">
-                            <h3 class="text-capitalize text-white font-weight-bold py-2 pl-3 mb-0">Parent Info</h3>
+                            <h3 class="text-capitalize text-white font-weight-bold py-5 pl-3 mb-0">Parent Info</h3>
                           </div>
                           <div class="border border-top-0 rounded-bottom">
                             <div class="media p-3 border-bottom">
@@ -223,10 +218,10 @@
                 <div v-for="review in parent.reviews">
                   <div class="row">
                     <div class="col-md-12 col-lg-12">
-                      <div class="card bg-pink card-hover mb-9">
+                      <div class="card bg-purple card-hover mb-9">
                         <div class="card-body text-center px-md-5 px-lg-6 my-2">
-                          <div class="card-icon-border-large border-pink mtn-80">
-                            <i class="fa fa-quote-left text-pink" aria-hidden="true"></i>
+                          <div class="card-icon-border-large border-purple mtn-80">
+                            <i class="fa fa-quote-left text-purple" aria-hidden="true"></i>
                           </div>
                           <blockquote class="blockquote blockquote-sm mt-2">
                             <p class="font-normal mb-5"> {{ review.comment }} </p>
@@ -243,17 +238,18 @@
           </div>
         </div>
       </div>
-      <!-- ====================================
-      ——— STAF SECTION
-      ===================================== -->
-      <section class="pt-9 pb-3 py-md-9 bg-pink" style="background-image: url(/assets/img/background/avator-bg.png);">
-          <!-- <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
-            <span class="shape shape-left bg-white"></span>
-            <h2 class="text-white">Meet Our Staff</h2>
-            <span class="shape shape-right bg-white"></span>
-          </div> -->
-      </section>
+      
     </div>
+    <!-- ====================================
+    ——— PROFILE FOOTER SECTION
+    ===================================== -->
+    <section class="pt-9 pb-3 py-md-9 bg-purple" style="background-image: url(/assets/img/background/avator-bg.png);">
+        <!-- <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
+          <span class="shape shape-left bg-white"></span>
+          <h2 class="text-white">Meet Our Staff</h2>
+          <span class="shape shape-right bg-white"></span>
+        </div> -->
+    </section>
 
   </div>
 </template>

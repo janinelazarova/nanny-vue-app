@@ -8,6 +8,7 @@ import NanniesEdit from './views/Nannies/Edit.vue';
 import NanniesLogin from './views/Nannies/Login.vue';
 import Logout from './views/Nannies/Logout.vue';
 import NanniesSearch from './views/Nannies/Search.vue';
+import Map from './views/Nannies/Map.vue';
 
 import ParentsLogin from './views/Parents/Login.vue';
 import ParentsNew from './views/Parents/New.vue';
@@ -144,7 +145,13 @@ export default new Router({
       path: '/reviews/:id/edit',
       name: 'reviews-edit',
       component: ReviewsEdit
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: Map
     }
+
 
   ]
 });

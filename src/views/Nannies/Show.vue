@@ -127,7 +127,7 @@
                             <div class="col-lg-12" v-if="isNannyLoggedIn()">
                                 <div class="mb-8">
                                   <router-link v-bind:to="'/nannies/' + nanny.id + '/edit'">
-                                    <button  type="button" class="btn btn-primary btn-lg btn-block">Edit Profile</button>
+                                    <button  type="button" class="btn btn-pink btn-lg btn-block text-white text-uppercase">Edit Profile</button>
                                   </router-link>
                                 </div>
                             </div>
@@ -270,13 +270,13 @@
               <!-- ====================================
               ——— BOOKINGS
               ===================================== -->
-              <section class="pb-10">
+              <section class="pb-10 pt-10">
                 <div class="container">
-                  <div class="section-title justify-content-center mb-5 mb-md-8">
+                  <!-- <div class="section-title justify-content-center mb-5 mb-md-8">
                     <span class="shape shape-left bg-purple"></span>
                     <h2 class="text-pink">My Bookings</h2>
                     <span class="shape shape-right bg-purple"></span>
-                  </div>
+                  </div> -->
 
                   <div class="row">
 
@@ -323,15 +323,15 @@
             </div>
             <div class="tab-pane fade" id="pills-reviews" role="tabpanel" aria-labelledby="pills-contact-tab">
               <!-- ====================================
-              ——— TESTIMONIAL
+              ——— REVIEWS
               ===================================== -->
-              <section class="pb-10">
+              <section class="pb-10 pt-10">
                 <div class="container">
-                  <div class="section-title justify-content-center mb-5 mb-md-8">
+                <!--   <div class="section-title justify-content-center mb-5 mb-md-8">
                     <span class="shape shape-left bg-purple"></span>
                     <h2 class="text-pink">My Reviews</h2>
                     <span class="shape shape-right bg-purple"></span>
-                  </div>
+                  </div> -->
                   <div v-for="review in nanny.reviews">
                     <div class="row">
                       <div class="col-md-12 col-lg-12">

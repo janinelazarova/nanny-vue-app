@@ -1,6 +1,17 @@
 <template>
   <div class="parents-edit">
     <!-- ====================================
+    ——— Welcome SECTION
+    ===================================== -->
+    <section class=" py-md-3 bg-purple" style="background-image: url(/assets/img/background/avator-bg.png);">
+        <div class="pt-5 pb-5 section-title justify-content-center mb-1 mb-md-3">
+          <span class="shape shape-left bg-white"></span>
+          <h2 class="text-white">{{ 'Welcome, ' + parent.first_name }}</h2>
+          <span class="shape shape-right bg-white"></span>
+        </div>
+    </section>
+
+    <!-- ====================================
     ——— EDIT PARENT
     ===================================== -->
     <section class="py-7 py-md-10">
@@ -57,9 +68,9 @@
               </div>
 
               <div class="mt-4">
-                  <button type="submit" class="btn btn-danger text-white text-uppercase">update</button>
+                  <button type="submit" class="btn btn-pink text-white text-uppercase ml-1 mr-1">update</button>
                   <router-link v-bind:to="'/parents/' + this.parent.id">
-                    <button type="submit" class="btn btn-pink text-white text-uppercase">my profile</button>
+                    <button type="submit" class="btn btn-pink text-white text-uppercase ml-1 mr-1">my profile</button>
                   </router-link>
               </div>
  
@@ -68,6 +79,16 @@
         </form>
 
       </div>
+    </section>
+    <!-- ====================================
+    ——— PROFILE FOOTER SECTION
+    ===================================== -->
+    <section class="pt-9 pb-3 py-md-9 bg-purple" style="background-image: url(/assets/img/background/avator-bg.png);">
+        <!-- <div class="section-title justify-content-center mb-4 mb-md-8 wow fadeInUp">
+          <span class="shape shape-left bg-white"></span>
+          <h2 class="text-white">Meet Our Staff</h2>
+          <span class="shape shape-right bg-white"></span>
+        </div> -->
     </section>
     
   </div>

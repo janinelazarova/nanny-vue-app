@@ -40,7 +40,7 @@
 
 
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-scrollUp navbar-sticky navbar-white">
+      <nav class="navbar navbar-expand-lg navbar-scrollUp navbar-sticky navbar-white" id="nav">
         <div class="container">
           <a class="navbar-brand" href="index.html">
             <img class="d-inline-block" src="/assets/img/kiddo-app-new.png" alt="Kidz School">
@@ -55,8 +55,8 @@
             <ul class="navbar-nav ml-lg-auto">
 
               <li class="nav-item dropdown bg-purple">
-                <router-link class="nav-link dropdown-toggle  active " href="javascript:void(0)"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to="/">
+                <router-link class="nav-link"
+                   aria-haspopup="true" aria-expanded="false" to="/">
                 <!-- <a class="nav-link dropdown-toggle  active " href="javascript:void(0)"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
                   <i class="fa fa-home nav-icon" aria-hidden="true"></i>
@@ -67,39 +67,42 @@
               </li>
 
               <li class="nav-item dropdown bg-purple" v-if="!isNannyLoggedIn() && !isParentLoggedIn()">
-                <router-link class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
-                  data-toggle="dropdown" to="/nannies/new">
+                <router-link class="nav-link" role="button" to="/nannies/new">
                   <i class="fa fa-list-ul nav-icon" aria-hidden="true"></i>
-                  <span style="bg-purple">Become a Nanny</span>
+                  <span style="bg-purple">Nanny Signup</span>
                   </router-link>
               </li>
 
+              <li class="nav-item dropdown bg-purple" v-if="!isParentLoggedIn() && !isNannyLoggedIn()">
+                <router-link class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" to="/nannies/login">
+                  <i class="fa fa-file-text-o nav-icon" aria-hidden="true"></i>
+                  <span>Nanny Login</span>
+                </router-link>
+              </li>
+
               <li class="nav-item dropdown bg-purple" v-if="!isNannyLoggedIn() && isParentLoggedIn()">
-                <router-link class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
-                  data-toggle="dropdown" v-bind:to="'/parents/' + getParentId()">
+                <router-link class="nav-link" role="button" v-bind:to="'/parents/' + getParentId()">
                   <i class="fa fa-list-ul nav-icon" aria-hidden="true"></i>
                   <span style="bg-purple">My Profile</span>
                   </router-link>
               </li>
 
               <li class="nav-item dropdown bg-purple" v-if="!isParentLoggedIn() && isNannyLoggedIn()">
-                <router-link class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
-                  data-toggle="dropdown" v-bind:to="'/nannies/' + nanny.id">
+                <router-link class="nav-link" role="button" v-bind:to="'/nannies/' + getNannyId()">
                   <i class="fa fa-list-ul nav-icon" aria-hidden="true"></i>
                   <span style="bg-purple">My Profile</span>
                   </router-link>
               </li>
 
               <li class="nav-item dropdown bg-purple" v-if="isParentLoggedIn()">
-                <router-link class="nav-link dropdown-toggle " role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to="/parents/logout">
+                <router-link class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" to="/parents/logout">
                   <i class="fa fa-file-text-o nav-icon" aria-hidden="true"></i>
                   <span>Logout</span>
                 </router-link>
               </li>
 
               <li class="nav-item dropdown bg-purple" v-if="isNannyLoggedIn()">
-                <router-link class="nav-link dropdown-toggle " role="button"
+                <router-link class="nav-link" role="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to="/nannies/logout">
                   <i class="fa fa-file-text-o nav-icon" aria-hidden="true"></i>
                   <span>Logout</span>
@@ -107,18 +110,17 @@
               </li>
 
               <li class="nav-item dropdown bg-purple" v-if="!isParentLoggedIn() && !isNannyLoggedIn()">
-                <router-link class="nav-link dropdown-toggle " href="#" role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to="/parents/login">
+                <router-link class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" to="/parents/login">
                   <i class="fa fa-file-text-o nav-icon" aria-hidden="true"></i>
-                  <span>Login</span>
+                  <span>Parent Login</span>
                 </router-link>
               </li>
 
               <li class="nav-item dropdown bg-purple" v-if="!isParentLoggedIn() && !isNannyLoggedIn()">
-                <router-link class="nav-link dropdown-toggle " href="javascript:void(0)" id="stores"
-                  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" to="/parents/new">
+                <router-link class="nav-link" id="stores"
+                  role="button" aria-haspopup="true" aria-expanded="false" to="/parents/new">
                   <i class="fa fa-pencil-square-o nav-icon" aria-hidden="true"></i>
-                  <span>Signup</span>
+                  <span>Parent Signup</span>
                 </router-link>
               </li>
 <!-- 
@@ -342,10 +344,10 @@
 #nav a {
   font-weight: bold;
   color: #2c3e50;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
 }*/
+#nav a.router-link-exact-active span{
+  color: #a597e7;
+}
 </style>
 
 <script>
