@@ -161,7 +161,7 @@
                                           <!-- <div class="col-md-12 col-lg-12 order-1 order-md-0"> -->
                                             <form v-on:submit.prevent="submit()" class="" action="index.html" method="post">
                                               <div class="card bg-transparent shadow-none">
-                                                <div class="card-header card-header-lg bg-danger text-white p-6 rounded-top">
+                                                <div class="card-header card-header-lg bg-purple text-white p-6 rounded-top">
                                                   <h4 class="font-weight-bold mb-0">Create a Booking</h4>
                                                 </div>
 
@@ -169,24 +169,24 @@
                                                                                           
                                                     <div class="form-group form-group-icon col-lg-12">
                                                       <label for="start_date">Start Date</label>
-                                                      <datepicker v-model="newBookingStartDate" class="form-control border-warning rounded-sm" id="start_date">
+                                                      <datepicker v-model="newBookingStartDate" class="form-control border-purple rounded-md" id="start_date">
                                                       </datepicker>
                                                     </div>
 
                                                     <div class="form-group form-group-icon col-lg-12">
                                                       <label for="hours">Hours</label>
-                                                      <input type="number" class="form-control border-warning rounded-sm" id="state" v-model="newBookingHours">
+                                                      <input type="number" class="form-control border-purple rounded-sm" id="state" v-model="newBookingHours">
                                                     </div>
                                                   
                                                     <div class="form-group form-group-icon col-lg-12">
                                                       <label for="start_time">Start Time</label>
-                                                      <flat-pickr :config="config" v-model="newBookingStartTime" class="form-control border-success rounded-sm" id="start_time">
+                                                      <flat-pickr :config="config" v-model="newBookingStartTime" class="form-control border-purple rounded-sm" id="start_time">
                                                       </flat-pickr>
                                                     </div>
 
                                                     <div class="form-group form-group-icon col-lg-12">
                                                       <label for="country">End Time</label>
-                                                      <flat-pickr :config="config" v-model="newBookingEndTime" class="form-control border-success rounded-sm" id="end_time">
+                                                      <flat-pickr :config="config" v-model="newBookingEndTime" class="form-control border-purple rounded-sm" id="end_time">
                                                       </flat-pickr>
                                                     </div>
 
@@ -196,7 +196,7 @@
                                                   </div>
 
                                                   <div class="mt-4">
-                                                    <button type="submit" class="btn btn-danger text-white text-uppercase">create booking</button>
+                                                    <button type="submit" class="btn btn-pink text-white text-uppercase">create booking</button>
                                                   </div>
 
                                                 </div>

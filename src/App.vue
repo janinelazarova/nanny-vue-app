@@ -54,43 +54,38 @@
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ml-lg-auto">
 
-              <li class="nav-item dropdown bg-purple">
-                <router-link class="nav-link"
-                   aria-haspopup="true" aria-expanded="false" to="/">
-                <!-- <a class="nav-link dropdown-toggle  active " href="javascript:void(0)"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                  <i class="fa fa-home nav-icon" aria-hidden="true"></i>
-                  <span>Home</span>
-                </router-link>
-                <!-- </a>
- -->
-              </li>
-
-              <li class="nav-item dropdown bg-purple" v-if="!isNannyLoggedIn() && !isParentLoggedIn()">
+              <li class="nav-item dropdown bg-info" v-if="!isNannyLoggedIn() && !isParentLoggedIn()">
                 <router-link class="nav-link" role="button" to="/nannies/new">
                   <i class="fa fa-list-ul nav-icon" aria-hidden="true"></i>
                   <span style="bg-purple">Nanny Signup</span>
                   </router-link>
               </li>
 
-              <li class="nav-item dropdown bg-purple" v-if="!isParentLoggedIn() && !isNannyLoggedIn()">
+              <li class="nav-item dropdown bg-info" v-if="!isParentLoggedIn() && !isNannyLoggedIn()">
                 <router-link class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" to="/nannies/login">
                   <i class="fa fa-file-text-o nav-icon" aria-hidden="true"></i>
                   <span>Nanny Login</span>
                 </router-link>
               </li>
 
+              <li class="nav-item dropdown bg-pink">
+                <router-link class="nav-link" aria-haspopup="true" aria-expanded="false" to="/">
+                  <i class="fa fa-home nav-icon" aria-hidden="true"></i>
+                  <span>Home</span>
+                </router-link>
+              </li>
+
               <li class="nav-item dropdown bg-purple" v-if="!isNannyLoggedIn() && isParentLoggedIn()">
                 <router-link class="nav-link" role="button" v-bind:to="'/parents/' + getParentId()">
                   <i class="fa fa-list-ul nav-icon" aria-hidden="true"></i>
-                  <span style="bg-purple">My Profile</span>
+                  <span>My Profile</span>
                   </router-link>
               </li>
 
               <li class="nav-item dropdown bg-purple" v-if="!isParentLoggedIn() && isNannyLoggedIn()">
                 <router-link class="nav-link" role="button" v-bind:to="'/nannies/' + getNannyId()">
                   <i class="fa fa-list-ul nav-icon" aria-hidden="true"></i>
-                  <span style="bg-purple">My Profile</span>
+                  <span>My Profile</span>
                   </router-link>
               </li>
 
@@ -138,7 +133,27 @@
 
         </div>
       </nav>
+
+
     </header>
+    <div class="color-bars">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col color-bar bg-warning d-none d-md-block"></div>
+          <div class="col color-bar bg-success d-none d-md-block"></div>
+          <div class="col color-bar bg-danger d-none d-md-block"></div>
+          <div class="col color-bar bg-info d-none d-md-block"></div>
+          <div class="col color-bar bg-purple d-none d-md-block"></div>
+          <div class="col color-bar bg-pink d-none d-md-block"></div>
+          <div class="col color-bar bg-warning"></div>
+          <div class="col color-bar bg-success"></div>
+          <div class="col color-bar bg-danger"></div>
+          <div class="col color-bar bg-info"></div>
+          <div class="col color-bar bg-purple"></div>
+          <div class="col color-bar bg-pink"></div>
+        </div>
+      </div>
+    </div>
 
     
     <router-view/>
@@ -168,14 +183,14 @@
         </div>
       </div>
 
-      <div class="pt-8 pb-7  bg-repeat" style="background-image: url(assets/img/background/footer-bg-img-1.png);">
+      <div class="pt-3 pb-1 bg-repeat" style="background-image: url(/assets/img/background/footer-bg-img-1.png);">
         <div class="container">
           <div class="row">
             <div class="col-sm-6 col-lg-3 col-xs-12">
               <a class="mb-6 d-block" href="index.html">
                 <img class="img-fluid d-inline-block w-50" data-src="/assets/img/kido-app-new.png" src="/assets/img/kiddo-app-new.png">
               </a>
-              <p class="mb-6">We were inspired to start Kiddo App out of a need and desire. As young, modern parents we wanted a better childcare option – one that was filled with unique experiences and inspiring role models for our kiddos. We also wanted something that felt good for us, as parents, to use.</p>
+             <!--  <p class="mb-6">We were inspired to start Kiddo App out of a need and desire. As young, modern parents we wanted a better childcare option – one that was filled with unique experiences and inspiring role models for our kiddos. We also wanted something that felt good for us, as parents, to use.</p> -->
             </div>
 
             <!-- <div class="col-sm-6 col-lg-3 col-xs-12">
@@ -280,6 +295,25 @@
         </div>
       </div>
 
+      <div class="color-bars">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col color-bar bg-warning d-none d-md-block"></div>
+            <div class="col color-bar bg-success d-none d-md-block"></div>
+            <div class="col color-bar bg-danger d-none d-md-block"></div>
+            <div class="col color-bar bg-info d-none d-md-block"></div>
+            <div class="col color-bar bg-purple d-none d-md-block"></div>
+            <div class="col color-bar bg-pink d-none d-md-block"></div>
+            <div class="col color-bar bg-warning"></div>
+            <div class="col color-bar bg-success"></div>
+            <div class="col color-bar bg-danger"></div>
+            <div class="col color-bar bg-info"></div>
+            <div class="col color-bar bg-purple"></div>
+            <div class="col color-bar bg-pink"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Copy Right -->
       <div class="copyright">
         <div class="container">
@@ -340,14 +374,14 @@
 }
 #nav {
   padding: 30px;
-}
-#nav a {
+}*/
+/*#nav a {
   font-weight: bold;
   color: #2c3e50;
 }*/
-#nav a.router-link-exact-active span{
+/*#nav a.router-link-exact-active span{
   color: #a597e7;
-}
+}*/
 </style>
 
 <script>

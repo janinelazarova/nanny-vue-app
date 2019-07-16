@@ -11,7 +11,7 @@
 
           <div class="col-sm-12 col-lg-12">
             <div class="mb-4 mb-sm-0">
-              <div class="bg-warning rounded-top p-2">
+              <div class="bg-purple rounded-top p-2">
                 <h3 class="text-white font-weight-bold mb-0 ml-2">Nanny Login</h3>
               </div>
       
@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                       <!-- <router-link v-bind:to="'/nannies/' + nanny.id"> -->
-                        <button type="submit" class="btn btn-danger text-uppercase w-100">Log In</button>
+                        <button type="submit" class="btn btn-pink text-white text-uppercase w-100">Log In</button>
                       <!-- </router-link> -->
                     </div>
 

@@ -1,9 +1,41 @@
 <template>
   <div class="bookings-show">
+
+    <!-- ====================================
+    ——— Welcome SECTION
+    ===================================== -->
+    <section class=" py-md-3 bg-purple" style="background-image: url(/assets/img/background/avator-bg.png);">
+        <div class="pt-5 pb-5 section-title justify-content-center mb-1 mb-md-3">
+          <span class="shape shape-left bg-white"></span>
+          <h2 class="text-white">Booking Details</h2>
+          <span class="shape shape-right bg-white"></span>
+        </div>
+    </section>
+
+    <div class="color-bars">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col color-bar bg-warning d-none d-md-block"></div>
+          <div class="col color-bar bg-success d-none d-md-block"></div>
+          <div class="col color-bar bg-danger d-none d-md-block"></div>
+          <div class="col color-bar bg-info d-none d-md-block"></div>
+          <div class="col color-bar bg-purple d-none d-md-block"></div>
+          <div class="col color-bar bg-pink d-none d-md-block"></div>
+          <div class="col color-bar bg-warning"></div>
+          <div class="col color-bar bg-success"></div>
+          <div class="col color-bar bg-danger"></div>
+          <div class="col color-bar bg-info"></div>
+          <div class="col color-bar bg-purple"></div>
+          <div class="col color-bar bg-pink"></div>
+        </div>
+      </div>
+    </div>
+
+
       <!-- ====================================
       ——— BREADCRUMB
       ===================================== -->
-      <section class="breadcrumb-bg" style="background: linear-gradient(rgba(138,15,212,0.5), rgba(199,9,226,0.5)), url(/assets/img/background/page-title-bg-img.jpg);">
+      <!-- <section class="breadcrumb-bg" style="background: linear-gradient(rgba(138,15,212,0.5), rgba(199,9,226,0.5)), url(/assets/img/background/page-title-bg-img.jpg);">
         <div class="container">
           <div class="breadcrumb-holder">
             <div>
@@ -11,7 +43,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
     <!-- ====================================
     ——— SINGLE-EVENT LEFT-SIDEBAR
@@ -25,10 +57,10 @@
                 <img class="w-100 rounded-top" src="/assets/img/features/feature-course-single-title.jpg" alt="events-xl-img1.jpg">
               </div>
 
-              <div class="card-body border-top-5 px-3 border-purple">
+             <!--  <div class="card-body border-top-5 px-3 border-purple">
                 <h3 class="text-purple font-weight-bold mb-4">Booking Notes</h3>
                 <p class="text-muted mb-6">{{ booking.notes }}</p>
-              </div>
+              </div> -->
 
 <!-- 
               <router-link v-if="isParentLoggedIn()" v-bind:to="'/bookings/' + booking.id + '/edit'" class="btn btn-pink text-white text-uppercase w-100" href="javascript:void(0)" data-toggle="modal" data-target="#modal-enrolAccount">Leave a review</router-link> -->
@@ -38,7 +70,7 @@
                
 
                 <div class="row">
-                  <div class="col-lg-9 col-sm-8 col-xs-12 order-sm-1">
+                  <!-- <div class="col-lg-9 pt-8 col-sm-8 col-xs-12 order-sm-1"> -->
                   <!-- <div class="col-md-6 col-lg-4"> -->
                     <!-- <h3 class="element-title mb-5">Modal Default</h3> -->
                     <!-- Button trigger modal -->
@@ -59,7 +91,7 @@
                           <div class="modal-body">
                             <!-- <p>Modal body text goes here.</p> -->
                             <div class="bg-light shadow-sm rounded p-3">
-                              <h3 class="mb-4 text-pink font-weight-bold">Leave A Comment</h3>
+                              <h3 class="mb-4 text-pink text-uppercase font-weight-bold">Leave A Review</h3>
 
                               <form v-on:submit.prevent="submit()">
                                 <div class="row">
@@ -89,7 +121,7 @@
                     </div>
 
                     
-                  </div>
+                 <!--  </div> -->
                 </div>
               </div>
             </div>
@@ -153,7 +185,7 @@
                   </div>
                 </div>
 
-                <div class="media mb-4">
+               <!--  <div class="media mb-4">
                   <div class="icon-rounded-circle-medium mr-3 bg-purple">
                     <i class="fa fa-phone text-white" aria-hidden="true"></i>
                   </div>
@@ -161,9 +193,9 @@
                     <h4 class="text-uppercase text-purple mt-0 font-weight-bold">parent contact</h4>
                     <time class="text-muted font-weight-bold">{{ booking.parent.phone_number }}</time>
                   </div>
-                </div>
+                </div> -->
 
-                <router-link v-bind:to="'/bookings/' + booking.id + '/edit'" class="btn btn-pink text-white text-uppercase w-100" href="javascript:void(0)" data-toggle="modal" data-target="#modal-enrolAccount">Edit Booking</router-link>
+                <router-link v-bind:to="'/bookings/' + booking.id + '/edit'" class="btn btn-pink text-white text-uppercase w-100 pt-3 pb-3" href="javascript:void(0)" data-toggle="modal" data-target="#modal-enrolAccount">Edit Booking</router-link>
 
               </div>
             </div>
