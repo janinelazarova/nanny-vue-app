@@ -22,10 +22,10 @@
     border-radius: 50%;
     cursor: pointer;
   }
-  #popup {
+  /*#popup {
     overflow-y: scroll;
     overflow-x: scroll;
-  }
+  }*/
 
 </style>
 
@@ -66,15 +66,15 @@ export default {
           container: 'map', // container id
           style: 'mapbox://styles/janinito/cjy5lf26i0t461cs00lq19pbk', // stylesheet location
           center: [-104.99, 39.74], // starting position [lng, lat]
-          zoom: 12 // starting zoom
+          zoom: 13 // starting zoom
       });
       this.nannies.forEach(function(nanny) {
-        var el = document.createElement('div');
-        el.className = 'marker';
+        // var el = document.createElement('div');
+        // el.className = 'marker';
         // create the popup
         console.log(nanny);
         var popup = new mapboxgl.Popup({ offset: 25 })
-        .setText(nanny.first_name);
+        .setText(nanny.address, nanny.address);
         //create the marker
         var marker = new mapboxgl.Marker({
         draggable: true

@@ -11,7 +11,7 @@
 
           <div class="col-sm-12 col-lg-12">
             <div class="mb-4 mb-sm-0">
-              <div class="bg-purple rounded-top p-2">
+              <div class="bg-pink rounded-top p-2">
                 <h3 class="text-white font-weight-bold mb-0 ml-2">Nanny Login</h3>
               </div>
       
@@ -96,7 +96,7 @@ export default {
           localStorage.setItem("nanny_id", response.data.nanny_id);
           localStorage.setItem("nannyname", response.data.nannyname);
           localStorage.setItem("is_nanny", true);
-          this.$router.push("/");
+          this.$router.push("/nannies/" + response.data.nanny_id);
         })
         .catch(error => {
           this.errors = ["Invalid email or password."];

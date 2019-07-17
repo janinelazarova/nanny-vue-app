@@ -95,7 +95,8 @@ export default {
           localStorage.setItem("parent_id", response.data.parent_id);
           localStorage.setItem("parentname", response.data.parentname);
           localStorage.setItem("is_parent", true);
-          this.$router.push("/");
+          // this.$router.push("/");
+          this.$router.push("/parents/" + response.data.parent_id);
         })
         .catch(error => {
           this.errors = ["Invalid email or password."];

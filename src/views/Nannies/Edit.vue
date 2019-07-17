@@ -1,5 +1,33 @@
 <template>
   <div class="nannies-edit">
+    <!-- ====================================
+    ——— Welcome SECTION
+    ===================================== -->
+    <section class=" py-md-3 bg-pink" style="background-image: url(/assets/img/background/avator-bg.png);">
+        <div class="pt-5 pb-5 section-title justify-content-center mb-1 mb-md-3">
+          <span class="shape shape-left bg-white"></span>
+          <h2 class="text-white">Edit Profile</h2>
+          <span class="shape shape-right bg-white"></span>
+        </div>
+    </section>
+    <div class="color-bars">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col color-bar bg-warning d-none d-md-block"></div>
+          <div class="col color-bar bg-success d-none d-md-block"></div>
+          <div class="col color-bar bg-danger d-none d-md-block"></div>
+          <div class="col color-bar bg-info d-none d-md-block"></div>
+          <div class="col color-bar bg-purple d-none d-md-block"></div>
+          <div class="col color-bar bg-pink d-none d-md-block"></div>
+          <div class="col color-bar bg-warning"></div>
+          <div class="col color-bar bg-success"></div>
+          <div class="col color-bar bg-danger"></div>
+          <div class="col color-bar bg-info"></div>
+          <div class="col color-bar bg-purple"></div>
+          <div class="col color-bar bg-pink"></div>
+        </div>
+      </div>
+    </div>
     
     <ul>
       <li v-for="error in errors">{{ error }}</li>
@@ -16,7 +44,7 @@
           <div class="col-md-7 col-lg-12 order-1 order-md-0">
             
               <div class="card bg-transparent shadow-none">
-                <div class="card-header card-header-lg bg-purple text-white p-6 rounded-top">
+                <div class="card-header card-header-lg bg-pink text-white p-6 rounded-top">
                   <h4 class="font-weight-bold mb-0">Edit Nanny Info</h4>
                 </div>
 
@@ -24,66 +52,66 @@
                   <div class="row">
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="first_name">First Name</label>
-                      <input type="text" class="form-control border-purple rounded-sm" id="first_name" placeholder="" v-model="nanny.first_name">
+                      <input type="text" class="form-control border-pink rounded-sm" id="first_name" placeholder="" v-model="nanny.first_name">
                     </div>
 
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="last_name">Last Name</label>
-                      <input type="text" class="form-control border-purple rounded-sm" id="last_name" placeholder="" v-model="nanny.last_name">
+                      <input type="text" class="form-control border-pink rounded-sm" id="last_name" placeholder="" v-model="nanny.last_name">
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control border-purple rounded-sm" id="email" placeholder="" v-model="nanny.email">
+                      <input type="email" class="form-control border-pink rounded-sm" id="email" placeholder="" v-model="nanny.email">
                     </div>
 
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="password">Password</label>
-                      <input type="password" class="form-control border-purple rounded-sm" id="password" placeholder="" v-model="nanny.password">
+                      <input type="password" class="form-control border-pink rounded-sm" id="password" placeholder="" v-model="nanny.password">
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="phone_number">Phone Number</label>
-                      <input type="text" class="form-control border-purple rounded-sm" id="phone_number" placeholder="" v-model="nanny.phone_number">
+                      <input type="text" class="form-control border-pink rounded-sm" id="phone_number" placeholder="" v-model="nanny.phone_number">
                     </div>
 
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="address">Address</label>
-                      <input type="text" class="form-control border-purple rounded-sm" id="address" placeholder="" v-model="nanny.address">
+                      <input type="text" class="form-control border-pink rounded-sm" id="address" placeholder="" v-model="nanny.address">
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="ages">Ages</label>
-                      <input type="text" class="form-control border-purple rounded-sm" id="ages" placeholder="" v-model="nanny.ages">
+                      <input type="text" class="form-control border-pink rounded-sm" id="ages" placeholder="" v-model="nanny.ages">
                     </div>
 
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="specialization">Specialization</label>
-                      <input type="text" class="form-control border-purple rounded-sm" id="specialization" placeholder="" v-model="nanny.specialization">
+                      <input type="text" class="form-control border-pink rounded-sm" id="specialization" placeholder="" v-model="nanny.specialization">
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="image_url">Image URL</label>
-                      <input type="text" class="form-control border-purple rounded-sm" id="image_url" placeholder="" v-model="nanny.image_url">
+                      <input type="text" class="form-control border-pink rounded-sm" id="image_url" placeholder="" v-model="nanny.image_url">
                     </div>
 
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="rate">Rate</label>
-                      <input type="number" class="form-control border-purple rounded-sm" id="rate" placeholder="" v-model="nanny.rate">
+                      <input type="number" class="form-control border-pink rounded-sm" id="rate" placeholder="" v-model="nanny.rate">
                     </div>
                   </div>
 
                   <div class="form-group mb-4">
                     <label class="" for="bio">Bio</label>
-                    <textarea name="text" class="form-control border-purple rounded-sm" rows="7" cols="95" id="bio" placeholder="" v-model="nanny.bio" ></textarea>
+                    <textarea name="text" class="form-control border-pink rounded-sm" rows="7" cols="95" id="bio" placeholder="" v-model="nanny.bio" ></textarea>
                   </div>
 
                 </div>

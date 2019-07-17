@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-sm-12 col-lg-12">
             <div class="mb-4 mb-sm-0">
-              <div class="bg-purple rounded-top p-2">
+              <div class="bg-pink rounded-top p-2">
                 <h3 class="text-white text-uppercase font-weight-bold mb-0 ml-2">Create A Nanny Account</h3>
               </div>
 
@@ -116,7 +116,7 @@ export default {
         rate: this.newNannyRate
       };
       axios.post("/api/nannies", params).then(response => {
-        this.$router.push("/");
+        this.$router.push("/nannies/login");
       }).catch(error => {
         this.errors = error.response.data.errors;
       });
