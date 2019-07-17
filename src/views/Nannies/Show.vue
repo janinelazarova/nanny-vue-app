@@ -3,7 +3,7 @@
     <!-- ====================================
     ——— Welcome SECTION
     ===================================== -->
-    <section class=" py-md-3 bg-pink" style="background-image: url(/assets/img/background/avator-bg.png);">
+    <section class=" py-md-3 bg-pink" style="background-image: url(/assets/img/avator-bg.png);">
         <div class="pt-5 pb-5 section-title justify-content-center mb-1 mb-md-3">
           <span class="shape shape-left bg-white"></span>
           <h2 class="text-white">{{ nanny.first_name + ' ' + nanny.last_name + ' Profile' }}</h2>
@@ -61,6 +61,11 @@
             ===================================== -->
             <section class="py-7 py-md-10">
               <div class="container">
+                <div class="section-title justify-content-center mb-4 mb-md-8 pt-3">
+                  <span class="shape shape-left bg-purple"></span>
+                  <h2 class="text-pink">My Info</h2>
+                  <span class="shape shape-right bg-purple"></span>
+                </div>
 
                 <div class="row">
                   <div class="col-sm-3 col-xs-12">
@@ -254,7 +259,43 @@
             <!-- ====================================
             ——— BOOKINGS
             ===================================== -->
-            <section class="pb-10 pt-10">
+            <div class="container">
+              <div class="section-title justify-content-center mb-4 mb-md-8 pt-10">
+                <span class="shape shape-left bg-purple"></span>
+                <h2 class="text-pink">My Bookings</h2>
+                <span class="shape shape-right bg-purple"></span>
+              </div>
+
+
+            <div class="row pt-1">
+
+              <div class="col-sm-12 col-lg-6">
+                <form class="shadow-sm rounded mb-8">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text bg-light border-0 px-4">
+                        <i class="fa fa-search text-muted font-size-18" aria-hidden="true"></i>
+                      </span>
+                    </div>
+                    <input type="text" class="form-control bg-light border-0 form-control-lg" aria-label="Amount (to the nearest dollar)"
+                     placeholder="Search bookings by parent name..." v-model="nameFilter" list="specializations" required="">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn shadow-none btn-lg btn-pink text-white">Search</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="col-sm-12 col-lg-6 form-group text-center sort-buttons">
+                <button class="btn btn-pink btn-md text-white ml-1 mr-1" v-on:click="setSortAttribute('start_date')">Sort By Date</button>
+                <button class="btn btn-pink btn-md text-white ml-1 mr-1" v-on:click="setSortAttribute('price')">Sort By Price</button>
+                <button class="btn btn-pink btn-md text-white ml-1 mr-1" v-on:click="setSortAttribute('parent.first_name')">Sort By Parent Name</button>
+              </div>
+            
+            </div>
+          </div>
+
+            <section class="pb-10">
               <div class="container">
                 <div class="table-responsive table-class-schedule">
                   <table class="table table-bordered text-center mb-0">
@@ -270,7 +311,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="booking in nanny.bookings">
+                      <tr v-for="booking in orderBy(filterBy(nanny.bookings, nameFilter), sortAttribute)">
                         <td class="align-middle text-muted">
                           <span class="text-info d-block font-weight-bold font-size-18 mb-2 ">{{ booking.start_date }}</span>
                         </td>
@@ -299,7 +340,7 @@
                   <span class="shape shape-right bg-purple"></span>
                 </div> -->
 
-                <div class="row">
+              <!--   <div class="row">
 
                   <div v-for="booking in nanny.bookings" class="col-xl-6">
                     <div class="media pricing-list bg-light mb-6">
@@ -338,7 +379,7 @@
                     </div>
                   </div>
 
-                </div>
+                </div> -->
               </div>
             </section>
           </div>
@@ -349,11 +390,11 @@
             ===================================== -->
             <section class="pb-10 pt-10">
               <div class="container">
-              <!--   <div class="section-title justify-content-center mb-5 mb-md-8">
+                <div class="section-title justify-content-center mb-5 mb-md-8 pb-4">
                   <span class="shape shape-left bg-purple"></span>
                   <h2 class="text-pink">My Reviews</h2>
                   <span class="shape shape-right bg-purple"></span>
-                </div> -->
+                </div>
                 <div v-for="review in nanny.reviews">
                   <div class="row">
                     <div class="col-md-12 col-lg-12">
@@ -413,9 +454,11 @@ import axios from "axios";
 import Datepicker from 'vuejs-datepicker';
 import flatPickr from 'vue-flatpickr-component';
 import 'flatpickr/dist/flatpickr.css';
+import Vue2Filters from 'vue2-filters';
 
 
 export default {
+  mixins: [Vue2Filters.mixin],
   components: {
     Datepicker,
     flatPickr
@@ -433,6 +476,8 @@ export default {
       newBookingStartTime: "",
       newBookingEndTime: "",
       newBookingNotes: "",
+      sortAttribute: "",
+      nameFilter: "",
       errors: [],
       config:
       {

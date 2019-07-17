@@ -74,7 +74,13 @@ export default {
         // create the popup
         console.log(nanny);
         var popup = new mapboxgl.Popup({ offset: 25 })
-        .setText(nanny.address, nanny.address);
+            // .setHTML(
+            //   "<h3><a href="' + "/nannies" + nanny.id'">' + nanny.address + '</a></h3>"
+            //   )
+               // "<h4>Name: "+nanny.first_name+" "+nanny_last_name+"</h4><br><h4>Address: "+nanny.address+"</h4><br><h4>Phone: "+nanny.phone_number+"</h4>"
+            
+        // var popup = new mapboxgl.Popup({ offset: 25 })
+        // .setText(nanny.address, nanny.address);
         //create the marker
         var marker = new mapboxgl.Marker({
         draggable: true

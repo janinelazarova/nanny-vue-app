@@ -4,7 +4,7 @@
     <!-- ====================================
     ——— Welcome SECTION
     ===================================== -->
-    <section class=" py-md-3 bg-purple" style="background-image: url(/assets/img/background/avator-bg.png);">
+    <section class=" py-md-3 bg-purple" style="background-image: url(/assets/img/avator-bg.png);">
         <div class="pt-5 pb-5 section-title justify-content-center mb-1 mb-md-3">
           <span class="shape shape-left bg-white"></span>
           <h2 class="text-white">Booking Details</h2>
@@ -54,7 +54,7 @@
           <div class="col-lg-9 col-sm-8 col-xs-12 order-sm-1">
             <div class="card shadow-none bg-transparent">
               <div class="position-relative">
-                <img class="w-100 rounded-top" src="/assets/img/features/feature-course-single-title.jpg" alt="events-xl-img1.jpg">
+                <img class="w-100 rounded-top" src="/assets/img/feature-course-single-title.jpg" alt="events-xl-img1.jpg">
               </div>
 
              <!--  <div class="card-body border-top-5 px-3 border-purple">

@@ -4,7 +4,7 @@
     <!-- ====================================
     ——— Welcome SECTION
     ===================================== -->
-    <section class=" py-md-3 bg-purple" style="background-image: url(/assets/img/background/avator-bg.png);">
+    <section class=" py-md-3 bg-purple" style="background-image: url(/assets/img/avator-bg.png);">
         <div class="pt-5 pb-5 section-title justify-content-center mb-1 mb-md-3">
           <span class="shape shape-left bg-white"></span>
           <h2 class="text-white">Edit Booking Details</h2>
