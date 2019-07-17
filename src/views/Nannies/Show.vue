@@ -23,12 +23,7 @@
     </section>
 
     
-   <!--  <div class="section-title justify-content-center mb-5 mb-md-8">
-      <span class="shape shape-left bg-purple"></span>
-      <h2 class="text-pink">{{ nanny.first_name + ' ' + nanny.last_name + ' Profile' }}</h2>
-      <span class="shape shape-right bg-purple"></span>
-    </div>
- -->
+ 
     
        <div class="container">
         <div class="col-lg-12 justify-content-center mb-8">

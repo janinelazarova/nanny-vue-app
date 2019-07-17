@@ -48,12 +48,12 @@
                   <div class="row">
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="start_time">Start Time</label>
-                      <input type="time" class="form-control border-purple rounded-sm" id="start_time" placeholder="" v-model="booking.start_time">
+                      <flat-pickr :config="config" type="time" class="form-control border-purple rounded-sm" id="start_time" placeholder="" v-model="booking.start_time"></flat-pickr>
                     </div>
 
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="end_time">End Time</label>
-                      <input type="time" class="form-control border-purple rounded-sm" id="end_time" placeholder="" v-model="booking.end_time">
+                      <flat-pickr :config="config" type="time" class="form-control border-purple rounded-sm" id="end_time" placeholder="" v-model="booking.end_time"></flat-pickr>
                     </div>
                   </div>
 
@@ -65,7 +65,7 @@
 
                     <div class="form-group form-group-icon col-lg-6">
                       <label for="start_date">Booking Date</label>
-                      <input type="date" class="form-control border-purple rounded-sm" id="start_date" placeholder="" v-model="booking.start_date">
+                      <datepicker type="date" class="form-control border-purple rounded-sm" id="start_date" placeholder="" v-model="booking.start_date"></datepicker>
                     </div>
                   </div>
 
@@ -117,12 +117,26 @@
 
 <script>
 import axios from "axios";
+import Datepicker from 'vuejs-datepicker';
+import flatPickr from 'vue-flatpickr-component';
+import 'flatpickr/dist/flatpickr.css';
 
 export default {
+  components: {
+    Datepicker,
+    flatPickr
+  },
   data: function() {
     return {
       errors: [],
-      booking: {}
+      booking: {},
+      config:
+      {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: false
+      }
     };
   },
   created: function() {
