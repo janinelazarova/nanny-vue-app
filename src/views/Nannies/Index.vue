@@ -198,7 +198,7 @@
                     </li>
                     <li class="text-white mb-1 d-flex align-items-baseline">
                       <i class="fa fa-graduation-cap mr-2 text-white" aria-hidden="true"></i>
-                      Education
+                      {{ nanny.education }}
                     </li>
                     <li class="text-white mb-1 d-flex align-items-baseline">
                       <i class="fa fa-paint-brush mr-2 text-white" aria-hidden="true"></i>
