@@ -143,11 +143,11 @@ export default {
       });
     },
     destroyBooking: function() {
-      if(confirm("Do you really want to delete this booking on " + this.booking.start_date + "?. You will be charged 20% Processing Fee."))
-      axios.delete("/api/bookings/" + this.booking.id).then(response => {
-        console.log("Booking Deleted", response.data);
-        this.$router.push("/");
-      });
+      if (confirm("Do you really want to delete this booking on " + this.booking.start_date + "?. You will be charged 20% Processing Fee."))
+        axios.delete("/api/bookings/" + this.booking.id).then(response => {
+          console.log("Booking Deleted", response.data);
+          this.$router.push("/");
+        });
     }
   }
 

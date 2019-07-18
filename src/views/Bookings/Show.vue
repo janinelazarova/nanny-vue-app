@@ -31,23 +31,9 @@
       </div>
     </div>
 
-
-      <!-- ====================================
-      ——— BREADCRUMB
-      ===================================== -->
-      <!-- <section class="breadcrumb-bg" style="background: linear-gradient(rgba(138,15,212,0.5), rgba(199,9,226,0.5)), url(/assets/img/background/page-title-bg-img.jpg);">
-        <div class="container">
-          <div class="breadcrumb-holder">
-            <div>
-              <h1 class="breadcrumb-title">Booking Details</h1>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-    <!-- ====================================
-    ——— SINGLE-EVENT LEFT-SIDEBAR
-    ===================================== --> 
+    <!-- =========================================================
+    ——— Show Booking and Leave a Review - If LoggedIn Parent
+    ========================================================== --> 
     <section class="py-10">
       <div class="container">
         <div class="row">
@@ -57,22 +43,11 @@
                 <img class="w-100 rounded-top" src="/assets/img/feature-course-single-title.jpg" alt="events-xl-img1.jpg">
               </div>
 
-             <!--  <div class="card-body border-top-5 px-3 border-purple">
-                <h3 class="text-purple font-weight-bold mb-4">Booking Notes</h3>
-                <p class="text-muted mb-6">{{ booking.notes }}</p>
-              </div> -->
-
-<!-- 
-              <router-link v-if="isParentLoggedIn()" v-bind:to="'/bookings/' + booking.id + '/edit'" class="btn btn-pink text-white text-uppercase w-100" href="javascript:void(0)" data-toggle="modal" data-target="#modal-enrolAccount">Leave a review</router-link> -->
-
               <!-- Elements Modal -->
               <div class="py-5" id="modal">
                
 
                 <div class="row">
-                  <!-- <div class="col-lg-9 pt-8 col-sm-8 col-xs-12 order-sm-1"> -->
-                  <!-- <div class="col-md-6 col-lg-4"> -->
-                    <!-- <h3 class="element-title mb-5">Modal Default</h3> -->
                     <!-- Button trigger modal -->
                     <button v-if="isParentLoggedIn()" type="button" class="btn btn-pink text-white text-uppercase w-100" data-toggle="modal" data-target="#reviewModal">
                       leave a review
@@ -120,8 +95,6 @@
                       </div>
                     </div>
 
-                    
-                 <!--  </div> -->
                 </div>
               </div>
             </div>
@@ -185,16 +158,6 @@
                   </div>
                 </div>
 
-               <!--  <div class="media mb-4">
-                  <div class="icon-rounded-circle-medium mr-3 bg-purple">
-                    <i class="fa fa-phone text-white" aria-hidden="true"></i>
-                  </div>
-                  <div class="media-body">
-                    <h4 class="text-uppercase text-purple mt-0 font-weight-bold">parent contact</h4>
-                    <time class="text-muted font-weight-bold">{{ booking.parent.phone_number }}</time>
-                  </div>
-                </div> -->
-
                 <router-link v-bind:to="'/bookings/' + booking.id + '/edit'" class="btn btn-pink text-white text-uppercase w-100 pt-3 pb-3" href="javascript:void(0)" data-toggle="modal" data-target="#modal-enrolAccount">Edit Booking</router-link>
 
               </div>
@@ -203,32 +166,6 @@
         </div>
       </div>
     </section>
-  
-
-    
-
-
-
-    <!-- <h1>{{ booking.first_name }}</h1> -->
-    
-   <!--  <h2>Booking ID: {{ booking.id }}</h2>
-    <h2>Booking Hours: {{ booking.hours }}</h2>
-    <h2>Start Time: {{ booking.start_time }}</h2>
-    <h2>Price: {{ booking.price }}</h2>
-    <img v-bind:src="booking.nanny.image_url" alt="">
-    <p>First Name: {{ booking.nanny.first_name }}</p>
-    <p>Last Name: {{ booking.nanny.last_name }}</p>
-    <p>Phone Number: {{ booking.nanny.phone_number }}</p>
-    <p>Address: {{ booking.nanny.address }}</p>
-    <p>Ages: {{ booking.nanny.ages }}</p>
-    <p>Specialization: {{ booking.nanny.specialization }}</p>
-    <p>Bio: {{ booking.nanny.bio }}</p>
-    <p>Rate: {{ booking.nanny.rate }}</p>
-
-    <button>
-      <router-link v-bind:to="'/bookings/' + booking.id + '/edit'">Edit</router-link>
-    </button>  -->
-    
 
   </div>
 </template>
@@ -240,8 +177,6 @@ export default {
   data:function() {
     return {
       booking: {},
-      // newReviewNannyId: this.booking.nanny_id,
-      // newReviewParentId: this.booking.parent_id,
       newReviewStars: "",
       newReviewComment: "",
       errors: []

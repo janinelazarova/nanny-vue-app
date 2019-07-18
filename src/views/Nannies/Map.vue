@@ -63,10 +63,10 @@ export default {
       console.log(this.nannies);
       mapboxgl.accessToken = 'pk.eyJ1IjoiamFuaW5pdG8iLCJhIjoiY2p4YW1idm1uMTg4cTN4bG1zMjN0ZXVlNyJ9.biAgrKD6Jj3e2_FFDyj2kA';
       var map = new mapboxgl.Map({
-          container: 'map', // container id
-          style: 'mapbox://styles/janinito/cjy5lf26i0t461cs00lq19pbk', // stylesheet location
-          center: [-104.99, 39.74], // starting position [lng, lat]
-          zoom: 13 // starting zoom
+        container: 'map', // container id
+        style: 'mapbox://styles/janinito/cjy5lf26i0t461cs00lq19pbk', // stylesheet location
+        center: [-104.99, 39.74], // starting position [lng, lat]
+        zoom: 13 // starting zoom
       });
       this.nannies.forEach(function(nanny) {
         // var el = document.createElement('div');
@@ -74,20 +74,19 @@ export default {
         // create the popup
         console.log(nanny);
         var popup = new mapboxgl.Popup({ offset: 25 })
-            // .setHTML(
-            //   "<h3><a href="' + "/nannies" + nanny.id'">' + nanny.address + '</a></h3>"
-            //   )
-               // "<h4>Name: "+nanny.first_name+" "+nanny_last_name+"</h4><br><h4>Address: "+nanny.address+"</h4><br><h4>Phone: "+nanny.phone_number+"</h4>"
-            
+          .setHTML(
+            // "<h3><a href="' + "/nannies" + nanny.id'">' + nanny.address + '</a></h3>"
+            "<h4>Name: "+nanny.first_name+" + "+nanny_last_name+"</h4><br><h4>Address: "+nanny.address+"</h4><br><h4>Phone: "+nanny.phone_number+"</h4>"
+          )
         // var popup = new mapboxgl.Popup({ offset: 25 })
         // .setText(nanny.address, nanny.address);
         //create the marker
         var marker = new mapboxgl.Marker({
-        draggable: true
+        // draggable: true
         })
-        .setLngLat([nanny.longitude, nanny.latitude])
-        .setPopup(popup) // sets a popup on this marker
-        .addTo(map);   
+          .setLngLat([nanny.longitude, nanny.latitude])
+          .setPopup(popup) // sets a popup on this marker
+          .addTo(map);   
       });
     });
   },
